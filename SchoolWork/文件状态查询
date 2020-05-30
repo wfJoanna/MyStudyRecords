@@ -1,0 +1,46 @@
+#实验项目3
+#文件状态查询
+#清屏后用户输入指定文件名
+#显示该文件状态信息
+#每隔5秒检测一次该文件大小是否改变
+#显示相应信息
+#清屏退出
+
+clear #清屏
+
+echo -n "请输入要检测其状态的文件名："
+read var1 #输入要检测的文件名
+
+ls -l $var1 #显示状态信息
+
+i=0 #用i来对连续检查不变的次数计数
+j=0 #用j来对大小改变的次数计数
+var2=$( ls -l $var1 | cut -d " " -f 5 ) #首次截取大小信息
+
+sleep 5
+while [ $i -ne 10 ]
+do
+  if [ $j -ne 2 ]
+  then
+    var3=$( ls -l $var1 | cut -d " " -f 5 ) #截取大小信息
+    ((i++))
+
+    if [ $var2 != $var3 ] #文件大小改变的情况
+    then echo "file[$var1] size changed"
+         var2=$var3
+         i=0
+         ((j++))
+    fi
+    sleep 5
+  else #如果到了这里，则说明文件改变了2次大小，可以从这里exit了
+    echo "file[$var1] size changed 2 times"
+    sleep 4 #为了让用户在清屏前看清信息，暂停4秒
+    clear
+    exit 1
+  fi 
+done #如果执行到了这里，则说明文件已连续10次未改变大小，可以从这里exit了
+
+echo "file[$var1] size not changed 10 times continuously"
+sleep 4 #为了让用户在清屏前看清信息，暂停4秒
+clear
+exit 1

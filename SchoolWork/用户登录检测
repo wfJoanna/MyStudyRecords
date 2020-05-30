@@ -1,0 +1,36 @@
+#实验项目2
+#用户登录检测
+#用户指定一个用户名，程序会列出当前系统中已登录用户的名单
+#然后检查指定用户是否已登陆
+#若已登录，则显示相应信息
+#若未登录，则等待该用户登陆，直到指定用户登陆进入系统为止
+if [ $# -ne 1 ]
+then
+  echo "Usage: usr_monitor username"
+  exit 1
+fi #检查命令行参数个数是否正确
+
+userlist=`who -q`
+echo $userlist #列出当前系统中的已登录用户的名单
+
+for name in $userlist
+do
+  if [ $name = $1 ]
+  then echo "user[$1] is logon"
+       exit 1 #用户已登录，退出程序
+  fi
+done #第一轮检查指定用户是否登录
+
+echo -n  "waiting user[$1]..." #指定用户未登录，等待
+
+while [ true ]
+do
+  sleep 5
+  for name in $userlist
+  do
+    if [ $name = $1 ]
+    then echo "[$1] is log on"
+         exit 1 #直到用户登录系统，退出程序
+    fi
+  done
+done #循环检查指定用户是否登录

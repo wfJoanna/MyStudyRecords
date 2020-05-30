@@ -1,0 +1,19 @@
+#实验项目1
+#文本建立与键盘输入
+
+if [ $# -ne 1 ]
+then
+  echo "Usage: exam1 filename"
+  exit 1
+fi #检测命令行参数个数是否正确
+
+INPUT="empty"
+echo "输入任一行文本："
+
+while [ -n "$INPUT" ] #空行表示整个输入结束
+do
+  read INPUT
+  echo $INPUT >> $1
+done #输入的内容将附加到filename里
+
+cat $1 #输入结束后显示该文件内容
