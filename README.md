@@ -49,15 +49,3 @@
    Child process 2 is sending a message!
 
 而父进程则从管道中读出来自于两个子进程的信息，显示在屏幕上。然后分别结束两个子进程的运行。子进程1先写，子进程2后写，完了之后父进程才从管道读数据
-
-## 机器学习实战：
-
-1. K-近邻算法
-
-[电影类别分类](https://github.com/wfJoanna/MyStudyRecords/blob/master/MachineLearningExercise/kNN/movieclassify.py)
-
-给定打斗镜头个数和接吻镜头个数，分辨是动作片还是爱情片
-
-[约会网站配对效果判定](https://github.com/wfJoanna/MyStudyRecords/blob/master/MachineLearningExercise/kNN/datingtest.py)
-
-额内容有点多，自己去找来看吧
