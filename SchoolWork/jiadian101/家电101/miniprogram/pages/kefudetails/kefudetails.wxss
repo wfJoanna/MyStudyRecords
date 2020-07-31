@@ -1,0 +1,32 @@
+/* miniprogram/pages/kefudetails/kefudetails.wxss */
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.block{
+    border: 5rpx solid cadetblue;
+    border-radius: 50rpx;
+    display: flex;
+    flex-direction: column;
+    margin-top: 25rpx;
+    margin-left: 25rpx;
+    margin-right: 25rpx;
+    width: 700rpx;
+}
+
+.title{
+    font-weight: bold;
+    margin: 20rpx 0;
+    font-size: 40rpx;
+}
+
+text{
+    margin: 20rpx;
+    font-size: 30rpx;
+}
+
+.block1{
+    display: none;
+}

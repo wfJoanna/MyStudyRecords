@@ -1,0 +1,8 @@
+<!--miniprogram/pages/kefuindex4/kefuindex4.wxml-->
+<view class="container">
+    <image src='{{src}}' class='avatar'></image>
+    <text>{{name}}</text>
+    <button bindtap='liaotian'>提供服务</button>
+    <button bindtap='sousuo'>查看订单</button>
+    <button class="exit" bindtap='exit'>下班</button>
+</view>

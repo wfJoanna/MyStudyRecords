@@ -1,0 +1,12 @@
+/* miniprogram/pages/pingjia/pingjia.wxss */
+.label-2{
+    margin: 30rpx 0;
+  }
+
+  .container{
+      display: flex;
+      flex-direction: column;
+      height: 60vh;
+      align-items: flex-start;
+      justify-content: space-around;
+  }

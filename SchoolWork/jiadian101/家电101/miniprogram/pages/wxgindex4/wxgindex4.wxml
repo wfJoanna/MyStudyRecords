@@ -1,0 +1,6 @@
+<view class="container">
+    <image src='{{src}}' class='avatar'></image>
+    <text>{{name}}</text>
+    <button bindtap='change'>查看订单</button>
+    <button class="exit" bindtap='exit'>退出登录</button>
+</view>

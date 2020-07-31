@@ -1,0 +1,5 @@
+<view class="container">
+    <image src='{{src}}' class='avatar'></image>
+    <text>{{name}}</text>
+    <button class="exit" bindtap='exit'>退出登录</button>
+</view>

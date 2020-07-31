@@ -1,0 +1,31 @@
+<view class="container">
+  <form bindsubmit='getForm'>
+    <view class="box">
+      <text>1.请输入您的姓名</text>
+      <input type="text" name="name" maxlength="10" placeholder="这里最多输入10个字"></input>
+    </view>
+    <view class="box">
+      <text>2.请输入您的手机号码</text>
+      <input type="text" name="tel" maxlength="11" placeholder="这里最多输入11个字"></input>
+    </view>
+    <view class="box">
+      <text>3.请输入您将要维修的家电</text>
+      <input type="text" name="jdtype" maxlength="10" placeholder="这里最多输入10个字"></input>
+    </view>
+    <view class="box">
+      <text>4.请输入家电的具体状况，包括使用年限等</text>
+      <input type="text" name="description" maxlength="100" placeholder="这里最多输入100个字"></input>
+    </view>
+    <view class="box">
+      <text>5.请选择您的省市区</text>
+      <picker mode="region" name="region" bindchange="regionChange">
+        <view>选择：{{region}}</view>
+      </picker>
+    </view>
+    <view class="box">
+      <text>6.请输入您的具体地址</text>
+      <input type="text" name="address" maxlength="20" placeholder="请具体到街道和门牌号,最多20个字"></input>
+    </view>
+    <button form-type="submit">提交</button>
+  </form>
+</view>

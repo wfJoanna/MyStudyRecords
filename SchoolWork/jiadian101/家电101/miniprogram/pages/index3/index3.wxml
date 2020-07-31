@@ -1,0 +1,30 @@
+<view class="{{choose?'block1':'block'}}">
+  <text>请选择在线的客服</text>
+  <text class="{{shangban?'block1':''}}">（客服正在被咨询或者已下班，请稍后再来）</text>
+  <button bindtap='choose' class="{{shangban?'':'block1'}}">test2kefu</button>
+</view>
+
+
+<view class="{{choose?'chatroom':'block1'}}">
+
+<scroll-view scroll-y class="body">
+  <view wx:for="{{chats}}" wx:key="{{item._id}}" class="message">
+      <image class="avatar" src="{{item.avatar}}" mode="scaleToFill"></image>
+      <view class="main">
+        <view class="nickname">{{item.nickName}}</view>
+        <view class="text-wrapper">
+          <view class="text-content">{{item.textContent}}</view>
+        </view>
+      </view>
+    </view>
+</scroll-view>
+
+<view class="footer">
+  <view class="message-sender">
+  <input class="text-input" placeholder="请输入" bindinput="onTextInput" value="{{textInputValue}}"></input>
+  <button class="send-btn" bindtap="onSend">发送</button>
+  
+  </view>
+</view>
+
+</view>
