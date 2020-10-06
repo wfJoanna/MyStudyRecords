@@ -125,3 +125,27 @@ TCP单进程循环服务器与单进程客户端：
 [top_up_subarea](https://github.com/wfJoanna/MyStudyRecords/blob/master/SchoolWork/bigdata/hdfs/top_up_subarea.py)
 
 [video_time_click](https://github.com/wfJoanna/MyStudyRecords/blob/master/SchoolWork/bigdata/hdfs/video_time_click.py)
+
+
+
+# 2020年10月
+
+## 机器学习：
+
+都是跟着Jack Cui的网站学习的。以下代码是我动手学习并改进成的适合我阅读的代码
+
+1. k近邻算法：
+
+[kNN_simplified](https://github.com/wfJoanna/MyStudyRecords/blob/master/SchoolWork/MachineLearning/kNN/kNN_simplified.py)
+
+[kNN_full](https://github.com/wfJoanna/MyStudyRecords/blob/master/SchoolWork/MachineLearning/kNN/kNN_full.py)
+
+[kNN_sklearn](https://github.com/wfJoanna/MyStudyRecords/blob/master/SchoolWork/MachineLearning/kNN/kNN_sklearn.py)
+
+2. 决策树：
+
+[DecisionTree_step1](https://github.com/wfJoanna/MyStudyRecords/blob/master/SchoolWork/MachineLearning/DecisionTree/DecisionTree_step1.py)
+
+[DecisionTree_step2](https://github.com/wfJoanna/MyStudyRecords/blob/master/SchoolWork/MachineLearning/DecisionTree/DecisionTree_step2.py)
+
+[DecisionTree_sklearn](https://github.com/wfJoanna/MyStudyRecords/blob/master/SchoolWork/MachineLearning/DecisionTree/DecisionTree_sklearn.py)
