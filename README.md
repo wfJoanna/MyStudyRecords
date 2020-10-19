@@ -149,3 +149,11 @@ TCP单进程循环服务器与单进程客户端：
 [DecisionTree_step2](https://github.com/wfJoanna/MyStudyRecords/blob/master/SchoolWork/MachineLearning/DecisionTree/DecisionTree_step2.py)
 
 [DecisionTree_sklearn](https://github.com/wfJoanna/MyStudyRecords/blob/master/SchoolWork/MachineLearning/DecisionTree/DecisionTree_sklearn.py)
+
+3. 朴素贝叶斯：
+
+[NaiveBayes_simplified](https://github.com/wfJoanna/MyStudyRecords/blob/master/SchoolWork/MachineLearning/NaiveBayes/NaiveBayes_simplified.py)
+
+[NaiveBayes_full](https://github.com/wfJoanna/MyStudyRecords/blob/master/SchoolWork/MachineLearning/NaiveBayes/NaiveBayes_full.py)
+
+[NaiveBayes_sklearn](https://github.com/wfJoanna/MyStudyRecords/blob/master/SchoolWork/MachineLearning/NaiveBayes/NaiveBayes_sklearn.py)
