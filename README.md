@@ -157,3 +157,27 @@ TCP单进程循环服务器与单进程客户端：
 [NaiveBayes_full](https://github.com/wfJoanna/MyStudyRecords/blob/master/SchoolWork/MachineLearning/NaiveBayes/NaiveBayes_full.py)
 
 [NaiveBayes_sklearn](https://github.com/wfJoanna/MyStudyRecords/blob/master/SchoolWork/MachineLearning/NaiveBayes/NaiveBayes_sklearn.py)
+
+
+
+# 2020年11月
+
+## flask：
+
+这算是我给自己写的教学代码吧
+
+把这一系列代码按顺序看完，基本上对flask就算是入门了（掺杂了一点点bootstrap）
+
+[flask learning](https://github.com/wfJoanna/MyStudyRecords/blob/master/SchoolWork/Flask)
+
+## 算法：
+
+一点点程序设计算法代码，各如其名，都比较简单。都是用python实现的
+
+[algorithms](https://github.com/wfJoanna/MyStudyRecords/blob/master/SchoolWork/Algorithms)
+
+## 爬虫：
+
+一点点爬虫，真的只有一点点。是爬小说的，用的requests
+
+[getNovel](https://github.com/wfJoanna/MyStudyRecords/blob/master/SchoolWork/Spider)
