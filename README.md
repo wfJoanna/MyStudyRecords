@@ -189,3 +189,17 @@ TCP单进程循环服务器与单进程客户端：
 一点点爬虫，真的只有一点点。是爬小说的，用的requests
 
 [getNovel](https://github.com/wfJoanna/MyStudyRecords/blob/master/SchoolWork/Spider)
+
+## 知识图谱：
+
+用flask+py2neo+cytoscape.js实现的一个简易的知识图谱，所用数据为neo4j的官方示例
+
+[py2neo_learning](https://github.com/wfJoanna/MyStudyRecords/blob/master/SchoolWork/py2neo/practice)
+
+## leetcode：
+
+开始刷leetcode了，具体每道题我就不写了，直接进文件夹看吧
+
+注意，并不是我打了注释的每段方法都能通过leetcode，但理论上都是对的
+
+[leetcode](https://github.com/wfJoanna/MyStudyRecords/blob/master/SchoolWork/leetcode)
