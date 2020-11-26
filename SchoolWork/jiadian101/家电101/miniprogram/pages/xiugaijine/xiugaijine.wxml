@@ -1,5 +1,0 @@
-<view class='container'>
-    <text>请输入新的金额：</text>
-    <input bindinput="inputJine" placeholder="请只输入数字"></input>
-    <button bindtap='tijiao'>确认</button>
-</view>

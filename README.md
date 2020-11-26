@@ -1,6 +1,6 @@
 # MyStudyRecords
 
-存放我学习过程中写的一些代码
+存放我学习过程中写的一些代码，适合我自己回顾知识的时候看（持续更新）
 
 <br>
 
@@ -27,12 +27,6 @@
 3. [文件状态查询](https://github.com/wfJoanna/MyStudyRecords/blob/master/SchoolWork/UNIXexp/unixtest03)
 
 动态检测指定文件的状态信息，当文件的大小发生改变时，给出提示信息，并继续前进检测。当文件的大小的变化次数或持续检查无变化次数达到一定值时，退出检查，程序结束。
-
-## 综合课程设计Ⅰ：
-
-一个简陋的拼图微信小程序，九宫格拼图
-
-[拼图小程序源码](https://github.com/wfJoanna/MyStudyRecords/blob/master/SchoolWork/PINTU)
 
 
 
@@ -72,28 +66,6 @@
 
 # 2020年7月
 
-这个月有点疯狂
-
-## 综合课程设计Ⅱ：
-
-我其实是有一个配套的ppt来对相应功能做讲解的，以下我就简略讲了
-
-1. 微信小程序：家电报修小程序
-
-采用了云开发的方式。这个小程序基本上是我一个人完成的，不夸张地说，我至少有95%的功劳，差不多花了十天完成的，前面过得还比较松散，后面就是眼睛一睁就开始写代码，完成了从一个前端新手到老手的蜕变呵呵呵
-
-这个小程序面向普通客户、客服、维修工，有专门的注册和登录功能。普通用户可以提交新订单、查看历史订单、和客服聊天、对维修工进行评价等等。客服就是可以和客户聊天、可以搜索所有未完成的订单信息、并且可以修改订单的费用金额等（当然了，在客户准备支付以及支付之后是不能再修改金额了的）。维修工可以查看所有未接单的订单、已接单的订单和已完成的订单，有接单功能，可以修改自己接了的订单、可以上传维修完成的照片等等
-
-[微信小程序源码](https://github.com/wfJoanna/MyStudyRecords/blob/master/SchoolWork/jiadian101/家电101/)
-
-2. 小程序配套web后台
-
-和上面的那个小程序是配套的，适用于给管理员查看订单状况和用户状况（当然包括客服和维修工啦）
-
-注意了，这个web后台需要部署到网上才能访问云数据库，否则获取不到数据
-
-[web后台源码](https://github.com/wfJoanna/MyStudyRecords/blob/master/SchoolWork/jiadian101/web/)
-
 ## 计网编程实验：
 
 TCP单进程循环服务器与单进程客户端：
@@ -108,7 +80,7 @@ TCP单进程循环服务器与单进程客户端：
 
 ## 实训-大数据：
 
-我们小组是做一个b站大数据分析平台，具体的我就懒得说了。反正我是负责处理数据的，用的都是python和spark，我把源码搁这儿，自己看吧。其实都大同小异，spark就是这么简单
+我们小组是做一个b站大数据分析平台，我是负责处理数据的，用的都是python和spark
 
 1. win pycharm版：
 
@@ -180,9 +152,9 @@ TCP单进程循环服务器与单进程客户端：
 
 ## 算法：
 
-一点点程序设计算法代码，各如其名，都比较简单。都是用python实现的
+跟着《算法图解》写代码练习。都是用python实现的
 
-[algorithms](https://github.com/wfJoanna/MyStudyRecords/blob/master/SchoolWork/Algorithms)
+[algorithms_python](https://github.com/wfJoanna/MyStudyRecords/blob/master/SchoolWork/Algorithms_python)
 
 ## 爬虫：
 
@@ -203,3 +175,9 @@ TCP单进程循环服务器与单进程客户端：
 注意，并不是我打了注释的每段方法都能通过leetcode，但理论上都是对的
 
 [leetcode](https://github.com/wfJoanna/MyStudyRecords/blob/master/SchoolWork/leetcode)
+
+## 算法竞赛入门经典：
+
+跟着《算法竞赛入门经典 第一版》写代码练习
+
+[algorithms_c](https://github.com/wfJoanna/MyStudyRecords/blob/master/SchoolWork/Algorithms_c)
