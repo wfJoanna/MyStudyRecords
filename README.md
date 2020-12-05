@@ -98,27 +98,27 @@ TCP单进程循环服务器与单进程客户端：
 
 1. win pycharm版：
 
-[represent_up_situ](https://github.com/wfJoanna/MyStudyRecords/blob/master/SchoolWork/Spark_spark/pycharm/lex.py)（额这个稍微有点拉跨，因为这个是第一个写的，当时有点赶时间，就选了最粗糙最直接的办法，总之就是很简陋）
+[represent_up_situ](https://github.com/wfJoanna/MyStudyRecords/blob/master/SchoolWork/Spark_exp/pycharm/lex.py)（额这个稍微有点拉跨，因为这个是第一个写的，当时有点赶时间，就选了最粗糙最直接的办法，总之就是很简陋）
 
-[area_click](https://github.com/wfJoanna/MyStudyRecords/blob/master/SchoolWork/Spark_spark/pycharm/area_click.py)
+[area_click](https://github.com/wfJoanna/MyStudyRecords/blob/master/SchoolWork/Spark_exp/pycharm/area_click.py)
 
-[subarea_click](https://github.com/wfJoanna/MyStudyRecords/blob/master/SchoolWork/Spark_spark/pycharm/subarea_click.py)
+[subarea_click](https://github.com/wfJoanna/MyStudyRecords/blob/master/SchoolWork/Spark_exp/pycharm/subarea_click.py)
 
-[top_up_subarea](https://github.com/wfJoanna/MyStudyRecords/blob/master/SchoolWork/Spark_spark/pycharm/top_up_subarea.py)
+[top_up_subarea](https://github.com/wfJoanna/MyStudyRecords/blob/master/SchoolWork/Spark_exp/pycharm/top_up_subarea.py)
 
-[video_time_click](https://github.com/wfJoanna/MyStudyRecords/blob/master/SchoolWork/Spark_spark/pycharm/video_time_click.py)
+[video_time_click](https://github.com/wfJoanna/MyStudyRecords/blob/master/SchoolWork/Spark_exp/pycharm/video_time_click.py)
 
 2. hdfs版：
 
 本质上和pycharm版没有区别，只是为了在集群上跑得出来，做了些微调（另外那个拉跨的represent_up_situ我就不放了）
 
-[area_click](https://github.com/wfJoanna/MyStudyRecords/blob/master/SchoolWork/Spark_spark/hdfs/area_click.py)
+[area_click](https://github.com/wfJoanna/MyStudyRecords/blob/master/SchoolWork/Spark_exp/hdfs/area_click.py)
 
-[subarea_click](https://github.com/wfJoanna/MyStudyRecords/blob/master/SchoolWork/Spark_spark/hdfs/subarea_click.py)
+[subarea_click](https://github.com/wfJoanna/MyStudyRecords/blob/master/SchoolWork/Spark_exp/hdfs/subarea_click.py)
 
-[top_up_subarea](https://github.com/wfJoanna/MyStudyRecords/blob/master/SchoolWork/Spark_spark/hdfs/top_up_subarea.py)
+[top_up_subarea](https://github.com/wfJoanna/MyStudyRecords/blob/master/SchoolWork/Spark_exp/hdfs/top_up_subarea.py)
 
-[video_time_click](https://github.com/wfJoanna/MyStudyRecords/blob/master/SchoolWork/Spark_spark/hdfs/video_time_click.py)
+[video_time_click](https://github.com/wfJoanna/MyStudyRecords/blob/master/SchoolWork/Spark_exp/hdfs/video_time_click.py)
 
 
 
