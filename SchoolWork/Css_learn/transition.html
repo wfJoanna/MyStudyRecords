@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>RILEY</title>
+    <style>
+        div.demo1 {
+            width: 100px;
+            height: 100px;
+            background: gold;
+            transition: height 0.5s;
+            -webkit-transition: height 0.5s;
+            /* Safari */
+            /*这种写法是为了能在各种浏览器上成功运行。其他地方我懒得写就没写。这里也并未写全。以后开发的时候再考虑兼容性的问题吧*/
+            /*这种过渡转变造成了其他元素的移动哦，不是漂浮的哦*/
+        }
+
+        div.demo1:hover {
+            height: 200px;
+        }
+
+        div.demo2 {
+            width: 100px;
+            height: 100px;
+            background: aquamarine;
+            transition: background 2s, width 2s, height 2s, transform 2s;
+            -webkit-transition: background 2s, width 2s, height 2s, transform 2s;
+            /* Safari */
+        }
+
+        div.demo2:hover {
+            width: 200px;
+            height: 200px;
+            background: gold;
+            transform: rotate(180deg);
+            -webkit-transform: rotate(180deg);
+            /* Chrome, Safari, Opera */
+        }
+    </style>
+    </style>
+</head>
+
+<body>
+    <p>鼠标移动到 div 元素上，查看过渡效果。</p>
+    <div class="demo1"></div>
+
+    <p>鼠标移动到 div 元素上，查看过渡效果。</p>
+    <div class="demo2"></div>
+</body>
+
+</html>

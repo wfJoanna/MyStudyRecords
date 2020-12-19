@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>RILEY</title>
+</head>
+
+<body>
+    <p id="demo">点击左边按钮获取当前坐标，点击右边按钮持续更新坐标</p>
+    <button onclick="getMyLocation()">点我</button>
+    <button onclick="watchMyLocation()">点我</button>
+</body>
+
+<script>
+    var x = document.getElementById("demo");
+
+    function getMyLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showMyPosition);
+        }
+        else {
+            x.innerHTML = "该浏览器不支持获取地理位置。";
+        }
+    }
+
+    function watchMyLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.watchPosition(showMyPosition);
+        }
+        else {
+            x.innerHTML = "该浏览器不支持获取地理位置。";
+        }
+    }
+
+    function showMyPosition(position) {
+        x.innerHTML = "纬度: " + position.coords.latitude + "<br>经度: " + position.coords.longitude;
+    }
+</script>
+
+</html>

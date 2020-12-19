@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>RILEY</title>
+    <style>
+        img {
+            float: right;
+        }
+
+        img.many {
+            float: left;
+            width: 80px;
+            height: 80px;
+            /*顺便说一下，这里内部样式表的优先级比标签属性高*/
+            margin: 5px;
+        }
+
+        .clear {
+            clear: both;
+        }
+    </style>
+</head>
+
+<body>
+    <p>
+        浮动元素<b>之后</b>的元素<b>将围绕它</b><br>
+        浮动元素<b>之前</b>的元素<b>将不会受到影响</b><br>
+        一个浮动元素会尽量向左或向右移动，直到它的外边缘碰到包含框或另一个浮动框的边框为止<br>
+        float的值有left、right、none三种，当然有inherit啦
+    </p>
+
+    <hr>
+
+    <h1>单个浮动元素</h1>
+    <img src="img.jpg" width="80" height="80" />
+    <p>
+        这是一些文本。这是一些文本。这是一些文本。
+        这是一些文本。这是一些文本。这是一些文本。
+        这是一些文本。这是一些文本。这是一些文本。
+        这是一些文本。这是一些文本。这是一些文本。
+        这是一些文本。这是一些文本。这是一些文本。
+        这是一些文本。这是一些文本。这是一些文本。
+        这是一些文本。这是一些文本。这是一些文本。
+        这是一些文本。这是一些文本。这是一些文本。
+        这是一些文本。这是一些文本。这是一些文本。
+        这是一些文本。这是一些文本。这是一些文本。
+    </p>
+
+    <hr class="clear">
+
+    <h1>多个浮动元素</h1>
+    <p>把几个浮动的元素放到一起，它们将彼此相邻</p>
+    <img class="many" src="img.jpg" width="100" height="100">
+    <img class="many" src="img.jpg" width="100" height="100">
+    <img class="many" src="img.jpg" width="100" height="100">
+    <img class="many" src="img.jpg" width="100" height="100">
+    <img class="many" src="img.jpg" width="100" height="100">
+    <img class="many" src="img.jpg" width="100" height="100">
+    <img class="many" src="img.jpg" width="100" height="100">
+    <img class="many" src="img.jpg" width="100" height="100">
+    <img class="many" src="img.jpg" width="100" height="100">
+    <img class="many" src="img.jpg" width="100" height="100">
+
+
+    <hr class="clear">
+
+    <h1>清除浮动 clear</h1>
+    <p>
+        元素浮动之后，周围的元素会重新排列，为了避免这种情况，使用 clear 属性<br>
+        clear 属性指定元素两侧不能出现浮动元素<br>
+        就有点分页符的感觉（你可以试试删除clear属性，看看效果。设置了float之后如果不来个clear的话，真的会对下面的排列产生巨大的影响）
+    </p>
+    <img class="many" src="img.jpg" width="100" height="100">
+    <img class="many" src="img.jpg" width="100" height="100">
+    <img class="many" src="img.jpg" width="100" height="100">
+    <img class="many" src="img.jpg" width="100" height="100">
+    <p class="clear">第二行</p>
+    <img class="many" src="img.jpg" width="100" height="100">
+    <img class="many" src="img.jpg" width="100" height="100">
+    <img class="many" src="img.jpg" width="100" height="100">
+    <img class="many" src="img.jpg" width="100" height="100">
+    <img class="many" src="img.jpg" width="100" height="100">
+    <img class="many" src="img.jpg" width="100" height="100">
+
+</body>
+
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>RILEY</title>
+    <style>
+        h1.vhidden {
+            visibility: hidden;
+        }
+
+        h1.dhidden {
+            display: none;
+        }
+
+        div.inline p {
+            display: inline;
+        }
+
+        div.block a {
+            display: block;
+        }
+
+        tr.collapse {
+            visibility: collapse;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>CSS 隐藏元素 visibility:hidden;</h1>
+    <h1>这是一个可见标题</h1>
+    <h1 class="vhidden">这是一个隐藏标题</h1>
+    <p>注意, 实例中的隐藏标题仍然占用空间。</p>
+
+    <hr>
+
+    <h1>CSS 隐藏元素 display:none;</h1>
+    <h1>这是一个可见标题</h1>
+    <h1 class="dhidden">这是一个隐藏标题</h1>
+    <p>注意, 实例中的隐藏标题不占用空间。</p>
+
+    <hr>
+
+    <h1>CSS display 更改内联元素和块元素</h1>
+    <div class="inline">
+        <p>这是一个段落</p>
+        <p>这是另一个段落</p>
+        <p>中间会隔一个空格哦</p>
+    </div>
+    <br>
+    <div class="block">
+        <a href="https://www.runoob.com">这是一个链接。</a>
+        <a href="https://www.runoob.com">这是另一个链接。</a>
+    </div>
+
+    <hr>
+
+    <h1>CSS visibility:collapse;</h1>
+    <table border="1">
+        <tr>
+            <th>Firstname</th>
+            <th>Lastname</th>
+        </tr>
+        <tr>
+            <td>Peter</td>
+            <td>Griffin</td>
+        </tr>
+        <tr class="collapse">
+            <td>Lois</td>
+            <td>Griffin</td>
+        </tr>
+    </table>
+    <p>当在表格元素中使用时，此值可隐藏一行或一列，空间会留给其他内容使用。<br>如果此值被用在其他的元素上，则会呈现为"hidden"</p>
+
+</body>
+
+</html>

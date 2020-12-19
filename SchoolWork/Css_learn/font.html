@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>RILEY</title>
+    <style>
+        p.serif {
+            font-family: "Times New Roman", Times, serif;
+        }
+
+        p.sansserif {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        @font-face {
+            font-family: JuniorPrince;
+            src: url("JuniorprinceRegular-DOJ71.otf") format("opentype");
+        }
+
+        p.normal {
+            font-style: normal;
+            /*normal感觉没什么用吧！*/
+        }
+
+
+        p.italic {
+            font-style: italic;
+        }
+
+        p.bigsize {
+            font-size: 30px;
+        }
+
+        p.smallsize {
+            font-size: 12px;
+        }
+
+        p.normalsize {
+            font-size: 16px;
+        }
+
+        p.normal2 {
+            font-weight: normal;
+            /*写成数字的话是400*/
+        }
+
+        p.light {
+            font-weight: lighter;
+        }
+
+        p.thick {
+            font-weight: bold;
+            /*写成数字的话是700*/
+        }
+
+        p.normalv {
+            font-variant: normal;
+        }
+
+        p.smallv {
+            font-variant: small-caps;
+        }
+
+        p.ex1 {
+            font: italic bold 20px Georgia, serif;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>CSS font-family</h1>
+    <p class="serif">这一段的字体是 Times New Roman </p>
+    <p class="sansserif">这一段的字体是 Arial </p>
+    <p style="font-family: JuniorPrince;">这一段的字体是 JuniorPrince </p>
+
+    <hr>
+
+    <h1>CSS font-style</h1>
+    <p class="normal">这是一个段落,正常。</p>
+    <p class="italic">这是一个段落,斜体。</p>
+
+    <hr>
+
+    <h1>CSS font-size</h1>
+    <p class="bigsize">This is a paragraph</p>
+    <p class="smallsize">This is a paragraph</p>
+    <p class="normalsize">This is a paragraph</p>
+    <p>默认大小是16px</p>
+
+    <hr>
+
+    <h1>CSS font-weight</h1>
+    <p class="normal2">This is a paragraph.</p>
+    <p class="light">This is a paragraph</p>
+    <p class="thick">This is a paragraph</p>
+
+    <hr>
+
+    <h1>CSS font-variant</h1>
+    <p>小型大写字母，意思是小写字母都转换为大写，但是会变小，而原先的大写字母不变</p>
+    <p class="normalv">My name is Hege Refsnes.</p>
+    <p class="smallv">My name is Hege Refsnes.</p>
+
+    <hr>
+
+    <h1>简写</h1>
+    <p class="ex1">This is a paragraph. This is a paragraph. This is a paragraph. This is a paragraph. This is a
+        paragraph. This is a paragraph. This is a paragraph. This is a paragraph.</p>
+    <p>简写属性要按顺序来写，否则会失效</p>
+</body>
+
+</html>

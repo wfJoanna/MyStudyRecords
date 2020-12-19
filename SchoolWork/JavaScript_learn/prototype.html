@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>RILEY</title>
+</head>
+
+<body>
+    <h1>添加属性和方法</h1>
+
+    <h2>给构造函数添加属性</h2>
+    <p>直接给构造函数 Person.nationality = "English" 是不行的</p>
+    <script>
+        function Person(first, last, age, eye) {
+            this.firstName = first;
+            this.lastName = last;
+            this.age = age;
+            this.eyeColor = eye;
+        }
+
+        Person.prototype.nationality = "English";
+
+        var myFather = new Person("John", "Doe", 50, "blue");
+        document.write("我父亲的国籍是 " + myFather.nationality); 
+    </script>
+
+    <h2>给构造函数添加方法</h2>
+    <script>
+        Person.prototype.name = function () {
+            return this.firstName + " " + this.lastName;
+        }; //在对象已经创建之后，给构造函数添加属性和方法，已创建的对象当然也会有新属性和新方法
+        document.write("我的父亲是 " + myFather.name());
+    </script>
+    <p><b>建议把方法都移到原型上，这样创建的对象都是共享同一个函数，这样可以节省很多内存</b></p>
+    <p>比如，假设我们上面Person这个构造函数里还有this.hello=function(){...}，然后用这个构造函数创建了对象x和y，但是会发现 x.hello===y.hello
+        是false，对然他们的函数名称和代码都是相同的，但是是两个不同的函数</p>
+    <p>如果我们不在构造函数里写方法，而是把方法直接写到prototype上，那它们就可以===了</p>
+
+    <hr>
+
+    <h1>修改原型指向</h1>
+    <p>修改__proto__属性</p>
+    <script>
+        myFather.name = 'John Doe';
+        // myFather这个对象实实在在属于他自己的，就只有上面Person构造函数最开始的属性，以及我们在这里添加的name属性
+        // 而属于myFather的旧原型Person的name方法和nationality属性，在我们更换了原型之后myFather就没有这些了
+        var Bird = {
+            fly: function () {
+                return this.name + ' is flying...';
+            }
+        };
+        myFather.__proto__ = Bird;
+        document.write(myFather.fly());
+    </script>
+    <p>
+        __proto__指向创建这个对象的函数(constructor)的prototype<br>
+        但究竟为什么这里可以直接myFather.__proto__=Bird呢？我目前还不知道
+    </p>
+
+    <hr>
+
+    <h1>原型链</h1>
+    <p>
+        例如，创建一个Array对象：<br>
+        var arr = [1, 2, 3];<br>
+        其原型链是：<br>
+        arr ----> Array.prototype ----> Object.prototype ----> null
+    </p>
+    <p>当我们用obj.xxx访问一个对象的属性时，JavaScript引擎先在当前对象上查找该属性，如果没有找到，就到其原型对象上找，如果还没有找到，就一直上溯到Object.prototype对象，最后，如果还没有找到，就只能返回undefined
+    </p>
+    <p>
+        上面myFather的旧原型链是：<br>
+        myFather ----> Person.prototype ----> Object.prototype ----> null<br>
+        新原型链是：<br>
+        myFather ----> Bird.prototype ----> Object.prototype ----> null
+    </p>
+
+    <hr>
+
+    <h1>constructor instanceof</h1>
+    <p>constructor 属性返回对象的构造函数</p>
+    <p>
+        JavaScript 数组 constructor 属性返回 function Array() { [native code] }<br>
+        JavaScript 数字 constructor 属性返回 function Number() { [native code] }<br>
+        JavaScript 字符串 constructor 属性返回 function String() { [native code] }
+    </p>
+    <p>
+        myFather.constructor === Person.prototype.constructor; // true<br>
+        Person.prototype.constructor === Person; // true<br>
+    </p>
+    <p>instanceof 用于判断一个变量是否属于某个对象的实例</p>
+    <p>myFather instanceof Person; // true</p>
+
+    <hr>
+
+    <p>看懂这张图，就差不多了</p>
+    <img src="e83bca5f1d1e6bf359d1f75727968c11_r.jpg">
+</body>
+
+</html>

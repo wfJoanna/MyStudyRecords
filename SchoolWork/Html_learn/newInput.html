@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>RILEY</title>
+</head>
+
+<body>
+    <p>input的新type：color,date,month,datetime-local,time,email,number(min和max属性)</p>
+    <form>
+        选择你喜欢的颜色：<input type="color" name="favcolor"><br>
+        生日：<input type="date" name="bday"><br>
+        生日（年月）：<input type="month" name="bdaymonth"><br>
+        生日（日期和时间）（无时区）：<input type="datetime-local" name="bdaytime"><br>
+        选择时间（无时区）：<input type="time" name="user_time"><br>
+        <!--其实还有一种type是datetime，但是我的浏览器都不支持-->
+
+        E-mail：<input type="email" name="useremail"><br>
+        <!--submit时会自动检查是否符合email格式-->
+
+        数量（1到5之间）：<input type="number" name="quantity" min="1" max="5"><br>
+        <!--submit时会自动检查大小是否符合定义-->
+
+        <!--还有一些type，懒得写了-->
+
+        <input type="submit">
+        <!--好像会自动填value-->
+    </form>
+</body>
+
+</html>

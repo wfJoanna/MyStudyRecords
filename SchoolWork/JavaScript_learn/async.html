@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>RILEY</title>
+</head>
+
+<body>
+    <h1>直接F12查看console</h1>
+</body>
+
+<script>
+    // promise.html最后的那个“计时器”程序还可以更好看一些，就是用异步函数（async function）
+    function print(delay, message) {
+        return new Promise(function (resolve, reject) {
+            setTimeout(function () {
+                console.log(message);
+                resolve();
+            }, delay);
+        });
+    }
+    async function asyncFunc() {
+        await print(1000, "First");
+        await print(4000, "Second");
+        await print(3000, "Third");
+    }
+    asyncFunc();
+    // 可以上下对比一下：
+    // print(1000, "First").then(function () {
+    //     return print(4000, "Second");
+    // }).then(function () {
+    //     print(3000, "Third");
+    // });
+
+    // async function 中可以使用 await 指令，await的意思是async wait
+    // await 指令后必须跟着一个 Promise，异步函数会在这个 Promise 运行中暂停，直到其运行结束再继续运行
+
+    // 处理异常可以用try-catch：
+    async function asyncFunc2() {
+        try {
+            await new Promise(function (resolve, reject) {
+                throw "Some error"; // 或者 reject("Some error")
+            });
+        } catch (err) {
+            console.log(err);
+        }
+    }
+    asyncFunc2();
+
+    // 如果 Promise 有一个正常的返回值，await 语句也会返回它：
+    async function asyncFunc3() {
+        let value = await new Promise(
+            function (resolve, reject) {
+                resolve("Return value");
+            }
+        );
+        console.log(value);
+    }
+    asyncFunc3();
+
+</script>
+
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>RILEY</title>
+</head>
+
+<body>
+    <p>form新元素：datalist</p>
+    <form>
+        <input list="browsers" name="browser">
+        <datalist id="browsers">
+            <option value="Internet Explorer">
+            <option value="Firefox">
+            <option value="Chrome">
+            <option value="Opera">
+            <option value="Safari">
+        </datalist>
+        <!--这个datalist和select很像，但其实完全不一样。这个和input打配合，拥有自动补全功能-->
+        <input type="submit">
+
+        <!--其实还有其他的新表单元素，但是我看不懂，懒得写了，反正不常用-->
+    </form>
+
+    <hr>
+
+    <p>input新属性：form</p>
+    <form id="form1">
+        First name: <input type="text" name="fname"><br>
+        <input type="submit">
+    </form>
+    Last name: <input type="text" name="lname" form="form1">
+    <!-- "Last name"字段没有在form表单之内，但它也是form表单的一部分 -->
+
+    <hr>
+
+    <p>input新属性：formaction</p>
+    <form action="aaa.php">
+        First name: <input type="text" name="fname"><br>
+        Last name: <input type="text" name="lname"><br>
+        <input type="submit" value="提交"><br>
+        <input type="submit" formaction="bbb.php" value="提交">
+        <!-- 两个提交按钮包含两个不同的地址，formaction属性会覆盖<form>元素中的action属性 -->
+    </form>
+
+    <hr>
+
+    <p>input新属性：pattern(title)</p>
+    <form>
+        Country code: <input type="text" name="country_code" pattern="[A-Za-z]{3}" title="Three letter country code">
+        <!-- patten属性描述了一个正则表达式用于验证<input>元素的值 -->
+        <!-- 当验证不通过时，显示title的值（其他情况定义title属性好像不能显示我们预留的信息） -->
+        <input type="submit">
+    </form>
+
+    <hr>
+
+    <p>input新属性：placeholder</p>
+    <form>
+        <input type="text" name="fname" placeholder="First name"><br>
+        <input type="text" name="lname" placeholder="Last name"><br>
+    </form>
+
+    <hr>
+
+    <p>input新属性：required</p>
+    <form>
+        Username: <input type="text" name="usrname" required>
+        <input type="submit">
+    </form>
+
+    <!-- 还有其他很多新属性啦，懒得写了 -->
+
+</body>
+
+</html>

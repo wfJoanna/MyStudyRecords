@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>RILEY</title>
+</head>
+
+<body>
+    <canvas id="myCanvas1" width="200" height="100" style="border:1px solid #c3c3c3;"></canvas><br>
+    <canvas id="myCanvas2" width="200" height="100" style="border:1px solid #c3c3c3;"></canvas><br>
+    <canvas id="myCanvas3" width="200" height="100" style="border:1px solid #c3c3c3;"></canvas><br>
+    <canvas id="myCanvas4" width="200" height="100" style="border:1px solid #c3c3c3;"></canvas><br>
+    <canvas id="myCanvas5" width="200" height="100" style="border:1px solid #c3c3c3;"></canvas><br>
+    <canvas id="myCanvas6" width="200" height="100" style="border:1px solid #c3c3c3;"></canvas><br>
+    <img id="doppio" src="img.jpg" alt="doppio" width="220" height="220"><br>
+    <canvas id="myCanvas7" width="250" height="300" style="border:1px solid #d3d3d3;"></canvas><br>
+
+    <script>
+        var c1 = document.getElementById("myCanvas1");
+        var ctx1 = c1.getContext("2d");
+        ctx1.fillStyle = "#00CC99"; //fillStyle属性可以是CSS颜色，渐变，或图案。fillStyle默认设置是#000000（黑色）
+        ctx1.fillRect(0, 0, 120, 100); //fillRect(x,y,width,height)方法定义了矩形当前的填充方式
+
+        var c2 = document.getElementById("myCanvas2");
+        var ctx2 = c2.getContext("2d");
+        ctx2.moveTo(0, 0); //moveTo(x,y)定义线条开始坐标
+        ctx2.lineTo(200, 100); //lineTo(x,y)定义线条结束坐标
+        ctx2.stroke(); //使用 stroke()方法来绘制线条
+
+        var c3 = document.getElementById("myCanvas3");
+        var ctx3 = c3.getContext("2d");
+        ctx3.beginPath();
+        ctx3.arc(100, 50, 40, 0, 2 * Math.PI); //arc(x,y,r,start,stop)绘制圆形
+        ctx3.stroke(); //也可用fill()方法
+
+        var c4 = document.getElementById("myCanvas4");
+        var ctx4 = c4.getContext("2d");
+        ctx4.font = "30px Arial"; //指定文字高为30px
+        ctx4.fillText("Hello World", 10, 50); //fillText(text,x,y)在canvas上绘制实心的文本，strokeText(text,x,y)在canvas上绘制空心的文本。(x,y)定义的是文字左下角点的坐标
+
+        var c5 = document.getElementById("myCanvas5");
+        var ctx5 = c5.getContext("2d");
+        var grd5 = ctx5.createLinearGradient(0, 0, 200, 0); //createLinearGradient(x,y,x1,y1)创建线条渐变
+        grd5.addColorStop(0, "#aa4b6b");
+        grd5.addColorStop(1 / 2, "#6b6b83");
+        grd5.addColorStop(1, "#3b8d99");
+        ctx5.fillStyle = grd5;
+        ctx5.fillRect(10, 10, 150, 80);
+
+        var c6 = document.getElementById("myCanvas6");
+        var ctx6 = c6.getContext("2d");
+        var grd6 = ctx6.createRadialGradient(75, 50, 5, 90, 60, 100); //createRadialGradient(x,y,r,x1,y1,r1)创建一个径向/圆渐变
+        grd6.addColorStop(0, "#aa4b6b");
+        grd6.addColorStop(1 / 2, "#6b6b83");
+        grd6.addColorStop(1, "#3b8d99");
+        ctx6.fillStyle = grd6;
+        ctx6.fillRect(10, 10, 150, 80);
+
+        var c7 = document.getElementById("myCanvas7");
+        var ctx7 = c7.getContext("2d");
+        var img = document.getElementById("doppio");
+        img.onload = function () {
+            ctx7.drawImage(img, 10, 10, 200, 200); //额，分辨率变低了，不知道为啥
+        } 
+    </script>
+</body>
+
+</html>

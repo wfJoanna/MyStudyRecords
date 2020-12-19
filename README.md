@@ -4,9 +4,9 @@
 
 <br>
 
-| 2018年上半年 | 2019年年末 | 2020年5月 | 2020年7月 | 2020年10月 | 2020年11月 |
-| :----: | :----: | :----: | :----: | :----: | :----: |
-| [:smile:](#2018年上半年) | [:snowflake:](#2019年年末) | [:books:](#2020年5月) | [:house:](#2020年7月) | [:partly_sunny:](#2020年10月) | [:earth_asia:](#2020年11月) |
+| 2018年上半年 | 2019年年末 | 2020年5月 | 2020年7月 | 2020年10月 | 2020年11月 | 2020年12月 |
+| :----: | :----: | :----: | :----: | :----: | :----: | :----: |
+| [:smile:](#2018年上半年) | [:snowflake:](#2019年年末) | [:books:](#2020年5月) | [:house:](#2020年7月) | [:partly_sunny:](#2020年10月) | [:earth_asia:](#2020年11月) | [:anger:](#2020年12月) |
 
 <br>
 
@@ -162,25 +162,25 @@ TCP单进程循环服务器与单进程客户端：
 
 把这一系列代码按顺序看完，基本上对flask就算是入门了（掺杂了一点点bootstrap）
 
-[learn flask](https://github.com/wfJoanna/MyStudyRecords/blob/master/SchoolWork/Flask_learn)
+[learn flask](https://github.com/wfJoanna/MyStudyRecords/blob/master/SchoolWork/Flask_learn/)
 
 ## 算法：
 
 跟着《算法图解》写代码练习。都是用python实现的
 
-[learn algorithms in python](https://github.com/wfJoanna/MyStudyRecords/blob/master/SchoolWork/Algorithms_Python)
+[learn algorithms in python](https://github.com/wfJoanna/MyStudyRecords/blob/master/SchoolWork/Algorithms_Python/)
 
 ## 爬虫：
 
 一点点爬虫，真的只有一点点。是爬小说的，用的requests
 
-[getNovel](https://github.com/wfJoanna/MyStudyRecords/blob/master/SchoolWork/Spider_learn)
+[getNovel](https://github.com/wfJoanna/MyStudyRecords/blob/master/SchoolWork/Spider_learn/)
 
 ## 知识图谱：
 
 用flask+py2neo+cytoscape.js实现的一个简易的知识图谱，所用数据为neo4j的官方示例
 
-[practice KnowledgeGraph](https://github.com/wfJoanna/MyStudyRecords/blob/master/SchoolWork/KnowledgeGraph_practice)
+[practice KnowledgeGraph](https://github.com/wfJoanna/MyStudyRecords/blob/master/SchoolWork/KnowledgeGraph_practice/)
 
 ## leetcode：
 
@@ -188,10 +188,24 @@ TCP单进程循环服务器与单进程客户端：
 
 注意，并不是我打了注释的每段方法都能通过leetcode，但理论上都是对的
 
-[finish leetcode in C++](https://github.com/wfJoanna/MyStudyRecords/blob/master/SchoolWork/Leetcode_C++)
+[finish leetcode in C++](https://github.com/wfJoanna/MyStudyRecords/blob/master/SchoolWork/Leetcode_C++/)
 
 ## 算法竞赛入门经典：
 
 跟着《算法竞赛入门经典 第一版》写代码练习
 
-[learn algorithms in c](https://github.com/wfJoanna/MyStudyRecords/blob/master/SchoolWork/Algorithms_C)
+[learn algorithms in c](https://github.com/wfJoanna/MyStudyRecords/blob/master/SchoolWork/Algorithms_C/)
+
+
+
+# 2020年12月
+
+## html、css、js：
+
+为找前端实习而重学前端，学习过程中为自己做的学习代码
+
+[html](https://github.com/wfJoanna/MyStudyRecords/blob/master/SchoolWork/Html_learn/)
+
+[css](https://github.com/wfJoanna/MyStudyRecords/blob/master/SchoolWork/Css_learn/)
+
+[js](https://github.com/wfJoanna/MyStudyRecords/blob/master/SchoolWork/JavaScript_learn/)

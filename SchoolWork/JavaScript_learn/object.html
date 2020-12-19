@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>RILEY</title>
+</head>
+
+<body>
+    <h1>创建JavaScript对象</h1>
+
+    <h2>1，使用Object</h2>
+    <script>
+        var person = new Object();
+        person.firstname = "John";
+        person.lastname = "Doe";
+        person.age = 20;
+        person.eyecolor = "blue";
+        document.write(person.firstname + " is " + person.age + " years old.");
+
+        // 这种写法等同于：
+        // var person = new Object();
+        // person = { firstname: "John", lastname: "Doe", age: 20, eyecolor: "blue" };
+        // 当然你直接 var person = {...}; 也是一样的啦
+    </script>
+
+    <h2>2，使用构造函数</h2>
+    <script>
+        function person2(firstname, lastname, age, eyecolor) {
+            this.firstname = firstname;
+            this.lastname = lastname;
+            this.age = age;
+            this.eyecolor = eyecolor;
+        }
+        var myFather = new person2("Jack", "Doe", 50, "blue"); // 记得要用new关键字啊！
+        document.write(myFather.firstname + " is " + myFather.age + " years old.");
+    </script>
+
+    <h2>一个易错点</h2>
+    <p>拷贝的对象改变了，原始的也会跟着改变，因为不是创建副本，而是引用</p>
+    <script>
+        var x = person; // 不会创建 person 的副本，是引用
+        x.age = 100;
+        document.write(person.firstname + " is " + person.age + " years old.");
+    </script>
+</body>
+
+</html>
