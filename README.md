@@ -100,7 +100,7 @@ TCP单进程循环服务器与单进程客户端：
 
 [represent_up_situ](./SchoolWork/Spark_exp/pycharm/lex.py)（额这个稍微有点拉跨，因为这个是第一个写的，当时有点赶时间，就选了最粗糙最直接的办法，总之就是很简陋）
 
-[area_click](./Spark_exp/pycharm/area_click.py)
+[area_click](./SchoolWork/Spark_exp/pycharm/area_click.py)
 
 [subarea_click](./SchoolWork/Spark_exp/pycharm/subarea_click.py)
 
