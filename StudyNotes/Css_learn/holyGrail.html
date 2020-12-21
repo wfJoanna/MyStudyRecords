@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>RILEY</title>
+</head>
+
+<style>
+    .HolyGrail {
+        display: flex;
+        min-height: 100vh;
+        flex-direction: column;
+    }
+
+    header,
+    footer {
+        flex: 1 1 0;
+        background-color: #666666;
+        color: white;
+    }
+
+    .HolyGrail-body {
+        display: flex;
+        flex: 10 10 0;
+    }
+
+    .HolyGrail-content {
+        flex: 1;
+        background-color: gainsboro;
+    }
+
+    .HolyGrail-nav,
+    .HolyGrail-ads {
+        /* 两个边栏的宽度设为12em */
+        flex: 0 0 12em;
+        background-color: #ff6600;
+    }
+
+    .HolyGrail-nav {
+        /* 导航放到最左边 */
+        order: -1;
+        background-color: #66ccff;
+    }
+
+    @media (max-width: 768px) {
+        .HolyGrail-body {
+            flex-direction: column;
+        }
+
+        .HolyGrail-nav,
+        .HolyGrail-ads,
+        .HolyGrail-content {
+            flex: auto;
+        }
+    }
+</style>
+
+<body class="HolyGrail">
+    <header>#header</header>
+    <div class="HolyGrail-body">
+        <main class="HolyGrail-content">#center</main>
+        <nav class="HolyGrail-nav">#left</nav>
+        <aside class="HolyGrail-ads">#right</aside>
+    </div>
+    <footer>#footer</footer>
+</body>
+
+</html>

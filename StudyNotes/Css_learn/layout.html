@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>RILEY</title>
+    <style>
+        .mcenter {
+            margin: auto;
+            width: 60%;
+            /*如果不设置width，就看不出来居中效果了，因为默认width为100%*/
+            border: 3px solid green;
+            padding: 10px;
+        }
+
+        .tcenter {
+            text-align: center;
+            border: 3px solid green;
+        }
+
+        img {
+            display: block;
+            /*为什么这儿一定要变成block呢？
+            因为内联元素不能更改元素的height，width的值，大小由内容撑开*/
+            width: 20%;
+            margin: auto;
+        }
+
+        .pright {
+            position: absolute;
+            right: 0px;
+            width: 300px;
+            border: 3px solid #73AD21;
+            padding: 10px;
+        }
+
+        .fright {
+            float: right;
+            width: 300px;
+            border: 3px solid #73AD21;
+            padding: 10px;
+        }
+
+        .pcenter {
+            padding: 70px 0;
+            border: 3px solid green;
+        }
+
+        .ptcenter {
+            padding: 70px 0;
+            border: 3px solid green;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>CSS 元素居中对齐</h1>
+    <div class="mcenter">
+        <p>水平居中块级元素 (如 div), 可以使用 margin: auto;</p>
+    </div>
+
+    <hr>
+
+    <h1>CSS 文本居中对齐</h1>
+    <div class="tcenter">
+        <p>如果仅仅是为了文本在元素内居中对齐，可以使用 text-align: center;</p>
+    </div>
+
+    <hr>
+
+    <h1>CSS 图片居中对齐</h1>
+    <p>要让图片居中对齐, 可以使用 margin: auto;</p>
+    <img src="img.jpg" alt="doppio">
+
+    <hr>
+
+    <h1>CSS 左右对齐-使用定位方式</h1>
+    <div class="pright">
+        <p>我们可以使用 position: absolute; 属性来对齐元素</p>
+    </div>
+    <p>右边的那块儿没有设置top与bottom，所以上下位置与原文档流位置一致。但是是不包含在文档流中的，所以会和别的元素重叠</p>
+
+    <hr>
+
+    <h1>CSS 左右对齐-使用浮动方式</h1>
+    <div class="fright">
+        <p>我们可以使用 float 属性来对齐元素。记得clear</p>
+    </div>
+    <p style="clear:both;">你会发现float和position和浏览器右边缘距离不同。只要给body设置padding为0、margin为0，float就也能紧贴浏览器窗口右边缘咯</p>
+
+    <hr>
+
+    <h1>CSS 垂直居中-使用padding</h1>
+    <div class="pcenter">
+        <p>使用 padding 属性实现元素的垂直居中</p>
+    </div>
+    <br>
+    <div class="ptcenter">
+        <p>如果要水平和垂直都居中，可以使用 padding 和 text-align: center</p>
+    </div>
+</body>
+
+</html>

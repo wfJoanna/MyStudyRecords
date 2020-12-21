@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>RILEY</title>
+    <style>
+        div.class1 p {
+            background-color: yellow;
+        }
+
+        div.class2>p {
+            background-color: red;
+        }
+
+        div.class3+p {
+            background-color: green;
+        }
+
+        div.class4~p {
+            background-color: orange;
+        }
+
+        [title] {
+            color: blue;
+        }
+
+        [title=runoob1] {
+            border: 5px solid green;
+        }
+
+        [title~=hello] {
+            border: 5px solid black;
+        }
+
+        [title|=en] {
+            border: 5px solid blue;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>后代选择器（以空格分隔）</h1>
+    <p>后代选择器用于选取某元素的后代元素</p>
+    <div class="class1">
+        <p>段落 1。 在 div 中。</p>
+        <p>段落 2。 在 div 中。</p>
+    </div>
+    <p>段落 3。不在 div 中。</p>
+    <p>段落 4。不在 div 中。</p>
+
+    <hr>
+
+    <h1>子元素选择器（以>分隔）</h1>
+    <p>与后代选择器相比，子元素选择器只能选择作为某元素直接子元素的元素</p>
+    <div class="class2">
+        <p>I will be styled.</p>
+    </div>
+    <div class="class2">
+        <span>
+            <p>I will not be styled.</p>
+        </span>
+    </div>
+
+    <hr>
+
+    <h1>相邻兄弟选择器（以+分隔）</h1>
+    <p>相邻兄弟选择器可选择紧接在另一元素后的元素，且二者有相同父元素</p>
+    <div class="class3">
+        <h2>DIV 内部标题</h2>
+        <p>DIV 内部段落。</p>
+    </div>
+    <p>DIV 之后的第一个 P 元素。</p>
+    <p>DIV 之后的第二个 P 元素。</p>
+
+    <hr>
+
+    <h1>后续兄弟选择器（以~分隔）</h1>
+    <p>后续兄弟选择器选取指定元素之后的所有相邻兄弟元素</p>
+    <div>
+        <div class="class4">
+            <p>段落 1。 在 div 中。</p>
+            <p>段落 2。 在 div 中。</p>
+        </div>
+        <p>段落 3。不在 div 中。</p>
+        <p>段落 4。不在 div 中。</p>
+    </div>
+    <!--因为会影响到下面的显示，所以我给这里添了一个div-->
+
+    <hr>
+
+    <h1>属性选择器</h1>
+    <p>下面的例子是把包含标题（title）的所有元素变为蓝色</p>
+    <p title="para">这是一个段落</p>
+    <a href="https://www.runoob.com" title="runoob">这是一个链接</a>
+
+    <hr>
+
+    <h1>属性和值选择器</h1>
+    <p>下面的例子是给标题title='runoob1'的元素添加绿色边框</p>
+    <p title="para">这是一个段落</p>
+    <a href="https://www.runoob.com" title="runoob1">这是一个链接</a>
+    <p>属性和值选择器当然可以和其他选择器搭配，格式嘛应该不用多说了吧。这里举个例子：<br>
+        input[type="text"]<br>
+        {<br>
+        ……<br>
+        }
+    </p>
+    <hr>
+
+    <h1>属性和值选择器-多值</h1>
+    <p>下面的例子是给标题title包含了'hello'的元素（用空格隔开或者就是hello）添加黑色边框</p>
+    <h2>将适用:</h2>
+    <h2 title="hello world">Hello world</h2>
+    <p title="student hello">Hello CSS students!</p>
+    <h2>将不适用:</h2>
+    <p title="student">Hi CSS students!</p>
+    <p>下面的例子是给标题title以'en'开头的元素添加蓝色边框</p>
+    <h2>将适用:</h2>
+    <h2 title="en">Hello world</h2>
+    <p title="en-us">Hello CSS students!</p>
+    <h2>将不适用:</h2>
+    <p title="enus">Hi CSS students!</p>
+</body>
+
+</html>

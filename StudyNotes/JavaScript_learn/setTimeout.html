@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>RILEY</title>
+</head>
+
+<body>
+    <h1>setTimeout()</h1>
+    <p>setTimeout() - 在指定的毫秒数后执行指定代码</p>
+    <p>setTimeout()第一个参数是函数，第二个参数是间隔的毫秒数</p>
+    <p>clearTimeout()</p>
+
+    <h1>setInterval()</h1>
+    <p>setInterval() - 间隔指定的毫秒数不停地执行指定代码</p>
+    <p>setInterval()第一个参数是函数，第二个参数是间隔的毫秒数</p>
+    <p>clearInterval()</p>
+
+    <h1>一个时钟</h1>
+    <p id="demo"></p>
+
+    <h1>一个计时器</h1>
+    <button onclick="startCount()">开始计时！</button>
+    <input type="text" id="txt">
+    <button onclick="stopCount()">停止计时！</button>
+</body>
+
+<script>
+    setInterval(myTimer, 1000);
+    function myTimer() {
+        var d = new Date();
+        document.getElementById("demo").innerHTML = d.toLocaleTimeString();
+    }
+
+    var tid;
+    var c = 0;
+    var time_is_on = 0;
+    function startCount() {
+        if (!time_is_on) {
+            time_is_on = 1;
+            tid = setInterval(changeCount, 1000);
+        }
+    }
+
+    function changeCount() {
+        document.getElementById("txt").value = c;
+        c += 1;
+    }
+
+    function stopCount() {
+        clearInterval(tid);
+        time_is_on=0;
+    }
+</script>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>RILEY</title>
+</head>
+
+<body>
+    <video width="400" height="200" controls>
+        <!--写了controls才可以手动播放暂停视频之类的-->
+        <source src="movie.mp4" type="video/mp4">
+        <!-- <video>元素支持多个<source>元素。<source>元素可以链接不同的视频文件。浏览器将使用第一个可识别的格式 -->
+    </video>
+
+    <hr>
+
+    <video id="video1" width="420">
+        <source src="movie.mp4" type="video/mp4">
+    </video><br>
+    <button onclick="playPause()">播放/暂停</button>
+    <button onclick="makeBig()">放大</button>
+    <button onclick="makeSmall()">缩小</button>
+    <button onclick="makeNormal()">普通</button>
+    </video>
+</body>
+
+<script>
+    var myVideo = document.getElementById("video1");
+    function playPause() {
+        if (myVideo.paused) myVideo.play();
+        else myVideo.pause();
+    }
+    function makeBig() {
+        myVideo.width = 560;
+    }
+    function makeSmall() {
+        myVideo.width = 320;
+    }
+    function makeNormal() {
+        myVideo.width = 420;
+    }
+</script>
+
+</html>

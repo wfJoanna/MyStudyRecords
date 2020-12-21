@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>RILEY</title>
+</head>
+
+<body>
+    <h1>symbol</h1>
+    <p>Symbol 可以创建一个独一无二的值</p>
+    <p>
+        比如：<br>
+        var race = {<br>
+        protoss: Symbol(),<br>
+        terran: Symbol(),<br>
+        zerg: Symbol()<br>
+        }<br>
+        <br>
+        race.protoss !== race.terran // true<br>
+        race.protoss !== race.zerg // true
+    </p>
+    <p>
+        也可以给每个Symbol起个名字，但这个名字跟Symbol的值没有任何关系，相当于一个注释<br>
+        如果不加参数，它们在控制台的输出都是Symbol()，不利于区分。有了参数以后，就等于为它们加上了描述，输出的时候就能够分清，到底是哪一个值<br>
+        var a1 = Symbol('a')<br>
+        var a2 = Symbol('a')<br>
+        a1 !== a2 // true
+    </p>
+    <p>注意！Symbol()函数并不是构造函数，只是普通的函数，所以前面不能加new</p>
+</body>
+
+</html>

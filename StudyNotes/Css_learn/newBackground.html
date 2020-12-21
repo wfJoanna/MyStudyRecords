@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>RILEY</title>
+    <style>
+        #example1 {
+            background-image: url(img_flwr.gif), url(paper.gif);
+            background-position: right bottom, left top;
+            background-repeat: no-repeat, repeat;
+            /*这是上下一一对应的*/
+            padding: 15px;
+        }
+
+        #example2 {
+            background: url(img_flwr.gif) right bottom no-repeat, url(paper.gif) left top repeat;
+            padding: 15px;
+        }
+
+        #example3 {
+            background: url(img.jpg);
+            background-size: 50px 50px;
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>background-image 多张图片</h1>
+    <div id="example1">
+        <h1>Lorem Ipsum Dolor</h1>
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet
+            dolore magna aliquam erat volutpat.</p>
+        <p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea
+            commodo consequat.</p>
+    </div>
+    <p>还可以缩写：</p>
+    <div id="example2">
+        <h1>Lorem Ipsum Dolor</h1>
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet
+            dolore magna aliquam erat volutpat.</p>
+        <p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea
+            commodo consequat.</p>
+    </div>
+
+    <h1>background-size</h1>
+    <p id="example3">这是一个段落。<br>这是一个段落。<br>这是一个段落。</p>
+
+    <h1>剩下的background-origin和background-clip感觉不是很常用，我就懒得写了</h1>
+</body>
+
+</html>

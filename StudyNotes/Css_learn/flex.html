@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>RILEY</title>
+</head>
+
+<style>
+    .dot {
+        display: block;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        margin: 4px;
+        background-color: #333;
+    }
+
+    [class$="face"] {
+        /* 这种选择器就是选择class属性以'face'结尾的元素 */
+        margin: 16px;
+        padding: 4px;
+        background-color: #e7e7e7;
+        width: 104px;
+        height: 104px;
+        border-radius: 10%;
+    }
+
+    .first-face {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .second-face {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .second-face .dot:nth-child(2) {
+        align-self: flex-end;
+    }
+
+    .third-face {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .third-face .dot:nth-child(2) {
+        align-self: center;
+    }
+
+    .third-face .dot:nth-child(3) {
+        align-self: flex-end;
+    }
+
+    .fourth-face,
+    .sixth-face {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .fourth-face .column,
+    .sixth-face .column {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .fifth-face {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .fifth-face .column {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .fifth-face .column:nth-of-type(2) {
+        /*用.column:nth-child(2)也可以*/
+        justify-content: center;
+    }
+
+    .Grid {
+        display: flex;
+    }
+
+    .Grid-cell {
+        flex: 1;
+        /*flex: 1 1 0*/
+        text-align: center;
+        background-color: cornsilk;
+        margin: 5px;
+    }
+
+    .Grid-cell.u-full {
+        /*注意咯，两个类连在一起，中间没有空格，表示选择同时拥有这两个类的元素*/
+        flex: 0 0 100%;
+    }
+
+    .Grid-cell.u-1of2 {
+        flex: 0 0 50%;
+    }
+
+    .Grid-cell.u-1of3 {
+        flex: 0 0 33.3333%;
+    }
+
+    .Grid-cell.u-1of4 {
+        flex: 0 0 25%;
+    }
+
+    .InputAddOn {
+        display: flex;
+        background: #eee;
+        border: 1px #ccc solid;
+        align-items: center;
+        height: 32px;
+    }
+
+    .InputAddOn-field {
+        flex: 1;
+        border: 0px;
+        align-self: stretch;
+        padding: 0 5px;
+    }
+
+    .InputAddOn-item {
+        padding: 0 8px;
+        border: 0px;
+    }
+
+    .Media {
+        display: flex;
+        align-items: flex-start;
+        background:#f2ede6;
+    }
+
+    .Media-figure {
+        margin: 1em;
+        width:70px;
+    }
+
+    .Media-body {
+        margin: 1em 1em 1em 0;
+        flex: 1;
+    }
+</style>
+
+<body>
+    <p>具体请参考蒙奇D一修的‘wxss之flex布局详讲.doc’以及阮一峰的‘Flex布局教程’（主要是阮一峰）</p>
+    <p>这里就不写具体的知识点了好吧，只写点实例</p>
+    <p>以下实例请自己动脑、动手，在做出来之前别看源码，因为光看源码很浪费时间而且没有任何用</p>
+
+    <h1>一、骰子的布局（1~6）</h1>
+    <div class="first-face">
+        <span class="dot"></span>
+    </div>
+    <div class="second-face">
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
+    <div class="third-face">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
+    <div class="fourth-face">
+        <div class="column">
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+        <div class="column">
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </div>
+    <div class="fifth-face">
+        <div class="column">
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+        <div class="column">
+            <span class="dot"></span>
+        </div>
+        <div class="column">
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </div>
+    <div class="sixth-face">
+        <div class="column">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+        <div class="column">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </div>
+
+    <h1>二、网格布局</h1>
+    <h2>基本网格布局</h2>
+    <p>一言以蔽之就是平均分配，重点在于 flex:1</p>
+    <div class="box">
+        <div class="Grid">
+            <div class="Grid-cell">1/2</div>
+            <div class="Grid-cell">1/2</div>
+        </div>
+        <div class="Grid">
+            <div class="Grid-cell">1/3</div>
+            <div class="Grid-cell">1/3</div>
+            <div class="Grid-cell">1/3</div>
+        </div>
+        <div class="Grid">
+            <div class="Grid-cell">1/4</div>
+            <div class="Grid-cell">1/4</div>
+            <div class="Grid-cell">1/4</div>
+            <div class="Grid-cell">1/4</div>
+        </div>
+        <div class="Grid">
+            <div class="Grid-cell">Full-height, even when my content doesn't fill the space.</div>
+            <div class="Grid-cell">The boy with fair hair lowered himself down the last few feet of rock and began to
+                pick his way toward the lagoon. Though he had taken off his school sweater and trailed it now from one
+                hand, his grey shirt stuck to him and his hair was plastered to his forehead. All round him the long
+                scar smashed into the jungle was a bath of heat. He was clambering heavily among the creepers and broken
+                trunks when a bird, a vision of red and yellow, flashed upwards with a witch-like cry; and this cry was
+                echoed by another.</div>
+        </div>
+    </div>
+    <h2>百分比布局</h2>
+    <div class="Grid">
+        <div class="Grid-cell u-1of2">1/2</div>
+        <!--类名中间有空格，表示拥有这两个类-->
+        <div class="Grid-cell">auto</div>
+        <div class="Grid-cell">auto</div>
+    </div>
+    <div class="Grid">
+        <div class="Grid-cell">auto</div>
+        <div class="Grid-cell u-1of3">1/3</div>
+    </div>
+    <div class="Grid">
+        <div class="Grid-cell u-1of4">1/4</div>
+        <div class="Grid-cell">auto</div>
+        <div class="Grid-cell u-1of3">1/3</div>
+    </div>
+
+    <h1>三、圣杯布局</h1>
+    <p>页面从上到下，分成三个部分：头部（header），躯干（body），尾部（footer）。其中躯干又水平分成三栏，从左到右为：导航、主栏、副栏</p>
+    <p>这里不太好写，我到另一个holyGrail.html写</p>
+
+    <h1>四、输入框的布局</h1>
+    <div class="InputAddOn">
+        <span class="InputAddOn-item">搜索</span>
+        <input class="InputAddOn-field">
+        <button class="InputAddOn-item">GO</button>
+    </div>
+
+    <h1>五、悬挂式布局</h1>
+    <div class="Media">
+        <img class="Media-figure" src="img.jpg" alt="doppio">
+        <p class="Media-body">The boy with fair hair lowered himself down the last few feet of rock and began to pick his way toward the lagoon. Though he had taken off his school sweater and trailed it now from one hand, his grey shirt stuck to him and his hair was plastered to his forehead. All round him the long scar smashed into the jungle was a bath of heat. He was clambering heavily among the creepers and broken trunks when a bird, a vision of red and yellow, flashed upwards with a witch-like cry; and this cry was echoed by another.</p>
+    </div>
+</body>
+
+</html>

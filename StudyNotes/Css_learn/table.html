@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>RILEY</title>
+    <style>
+        table,
+        th,
+        td {
+            border: 3px solid cadetblue;
+        }
+
+        table.collapse {
+            border-collapse: collapse;
+        }
+
+        table.tablew {
+            width: 100%;
+        }
+
+        th.thh {
+            height: 50px;
+            text-align: right;
+            vertical-align: bottom;
+        }
+
+        table.tablep td {
+            padding: 15px;
+            background-color: cornflowerblue;
+            color: white;
+        }
+
+        caption {
+            caption-side: bottom;
+        }
+    </style>
+</head>
+
+<body>
+    <p>我们在learnHtml里的table.html见识了一些table标签里的属性可以修改样式，但远远比不上直接添加样式</p>
+
+    <h1>CSS border</h1>
+    <table>
+        <tr>
+            <th>Firstname</th>
+            <th>Lastname</th>
+        </tr>
+        <tr>
+            <td>Peter</td>
+            <td>Griffin</td>
+        </tr>
+        <tr>
+            <td>Lois</td>
+            <td>Griffin</td>
+        </tr>
+    </table>
+    <p>请注意，在上面的例子中的表格有双边框。这是因为 表 和 每个th/td元素 有独立的边界。用下面的border-collapse可以折叠边框</p>
+
+    <hr>
+
+    <h1>CSS border-collapse</h1>
+    <table class="collapse">
+        <tr>
+            <th>Firstname</th>
+            <th>Lastname</th>
+        </tr>
+        <tr>
+            <td>Peter</td>
+            <td>Griffin</td>
+        </tr>
+        <tr>
+            <td>Lois</td>
+            <td>Griffin</td>
+        </tr>
+    </table>
+
+    <hr>
+
+    <h1>CSS width height text-align vertical-align</h1>
+    <table class="tablew">
+        <tr>
+            <th class="thh">Firstname</th>
+            <th class="thh">Lastname</th>
+            <th class="thh">Savings</th>
+        </tr>
+        <tr>
+            <td>Peter</td>
+            <td>Griffin</td>
+            <td>$100</td>
+        </tr>
+        <tr>
+            <td>Lois</td>
+            <td>Griffin</td>
+            <td>$150</td>
+        </tr>
+        <tr>
+            <td>Joe</td>
+            <td>Swanson</td>
+            <td>$300</td>
+        </tr>
+        <tr>
+            <td>Cleveland</td>
+            <td>Brown</td>
+            <td>$250</td>
+        </tr>
+    </table>
+
+    <hr>
+
+    <h1>CSS padding background-color color caption-side</h1>
+    <table class="tablep">
+        <caption>Table 1.1 Customers</caption>
+        <tr>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Savings</th>
+        </tr>
+        <tr>
+            <td>Peter</td>
+            <td>Griffin</td>
+            <td>$100</td>
+        </tr>
+        <tr>
+            <td>Lois</td>
+            <td>Griffin</td>
+            <td>$150</td>
+        </tr>
+        <tr>
+            <td>Joe</td>
+            <td>Swanson</td>
+            <td>$300</td>
+        </tr>
+        <tr>
+            <td>Cleveland</td>
+            <td>Brown</td>
+            <td>$250</td>
+        </tr>
+    </table>
+</body>
+
+</html>

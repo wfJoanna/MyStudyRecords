@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>RILEY</title>
+    <style>
+        ul.a {
+            list-style-type: circle;
+        }
+
+        ul.b {
+            list-style-type: square;
+        }
+
+        ol.c {
+            list-style-type: upper-roman;
+        }
+
+        ol.d {
+            list-style-type: lower-alpha;
+        }
+
+        ul.limage {
+            list-style-image: url('sqpurple.gif');
+        }
+
+        ul.liststyle {
+            list-style: square url("sqpurple.gif");
+        }
+    </style>
+</head>
+
+<body>
+    <h1>CSS list-style-type</h1>
+    <p>无序列表实例:</p>
+    <ul class="a">
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Coca Cola</li>
+    </ul>
+    <ul class="b">
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Coca Cola</li>
+    </ul>
+    <p>有序列表实例:</p>
+    <ol class="c">
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Coca Cola</li>
+    </ol>
+    <ol class="d">
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Coca Cola</li>
+    </ol>
+    <p>其实在learnHtml里的list.html已经演示过了，这里只是新增了upper-roman和lower-alpha</p>
+    <p>list-style-type其实还有很多其他值，这里就不一一列举了</p>
+
+    <hr>
+
+    <h1>CSS list-style-image</h1>
+    <ul class="limage">
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Coca Cola</li>
+    </ul>
+
+    <hr>
+
+    <h1>简写</h1>
+    <ul class="liststyle">
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Coca Cola</li>
+    </ul>
+    <p>简写属性要按顺序来写，否则会失效</p>
+
+</body>
+
+</html>
