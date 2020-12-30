@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>RILEY</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+</head>
+
+<body>
+    <p><b>组件可以扩展 HTML 元素，封装可重用的代码</b></p>
+
+    <h1>全局组件</h1>
+    <p>所有实例都能用全局组件</p>
+    <p>注册一个全局组件语法格式：<b>Vue.component(tagName, options);</b></p>
+    <p>tagName 为组件名，options 为配置选项</p>
+    <p>例子：</p>
+    <div id="app1">
+        <runoob></runoob>
+    </div>
+    <script>
+        // 注册
+        Vue.component('runoob', {
+            template: '<h3>自定义组件!</h3>'
+        });
+
+        // 创建根实例
+        new Vue({
+            el: '#app1'
+        });
+    </script>
+
+    <hr>
+
+    <h1>局部组件</h1>
+    <p>我们也可以在实例选项中注册局部组件，这样组件只能在这个实例中使用</p>
+    <p>例子：</p>
+    <div id="app2">
+        <runoob></runoob>
+    </div>
+    <script>
+        var Child = {
+            template: '<h3>自定义组件!</h3>'
+        };
+        new Vue({
+            el: '#app2',
+            components: { // 注意！是components，有s，上面儿注册全局组件时没s
+                'runoob': Child
+            }
+        });
+    </script>
+
+    <hr>
+
+    <h1>props</h1>
+    <p>传递数据</p>
+    <p>例子：</p>
+    <div id="app3">
+        <child message="hello!"></child>
+    </div>
+    <script>
+        Vue.component('child', {
+            // 声明 props
+            props: ['message'],
+            template: '<h3>{{ message }}</h3>'
+        });
+        var vm = new Vue({
+            el: '#app3'
+        });
+    </script>
+    <p>另一个例子：</p>
+    <div id="app4">
+        <child v-bind:message="Msg"></child>
+    </div>
+    <script>
+        Vue.component('child', {
+            props: ['message'],
+            template: '<h3>{{ message }}</h3>'
+        });
+        var vm = new Vue({
+            el: '#app4',
+            data: {
+                Msg: 'hello!'
+            }
+        });
+    </script>
+    <p>另一个例子：</p>
+    <div id="app5">
+        <ol>
+            <todo-item v-for="item in sites" v-bind:todo="item"></todo-item>
+        </ol>
+    </div>
+    <script>
+        Vue.component('todo-item', {
+            props: ['todo'],
+            template: '<li>{{ todo.text }}</li>'
+        });
+        new Vue({
+            el: '#app5',
+            data: {
+                sites: [
+                    { text: 'Runoob' },
+                    { text: 'Google' },
+                    { text: 'Taobao' }
+                ]
+            }
+        });
+    </script>
+
+    <hr>
+
+    <h1>自定义事件</h1>
+    <div id="app6">
+        <p>{{ total }}</p>
+        <button-counter v-on:increment="incrementTotal"></button-counter>
+        <button-counter v-on:increment="incrementTotal"></button-counter>
+    </div>
+    <script>
+        Vue.component('button-counter', {
+            template: '<button v-on:click="incrementHandler">{{ counter }}</button>',
+            data: function () {
+                return {
+                    counter: 0
+                };
+            }, // data必须是一个函数，这样的话组件互不影响（我也不知道为什么）
+            methods: {
+                incrementHandler: function () {
+                    this.counter += 1; // 这里的this指向的是这个组件，而不是vue实例对象
+                    this.$emit('increment'); // 使用 $emit(eventName) 触发事件
+                }
+            }
+        });
+        new Vue({
+            el: '#app6',
+            data: {
+                total: 0
+            },
+            methods: {
+                incrementTotal: function () {
+                    this.total += 1;
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

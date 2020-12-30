@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>RILEY</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+</head>
+
+<body>
+    <h1>监听事件</h1>
+    <p>例一：</p>
+    <div id="app1">
+        <button v-on:click="counter += 1">增加1</button>
+        <p>这个按钮被点击了 {{ counter }} 次</p>
+    </div>
+    <script>
+        new Vue({
+            el: '#app1',
+            data: {
+                counter: 0
+            }
+        });
+    </script>
+
+    <p>例二：</p>
+    <div id="app2">
+        <button v-on:click="greet">Greet1</button>
+        <button v-on:click="say('hi')">Greet2</button>
+        <!--上面表示绑定到方法greet上，下面表示执行内联JS语句-->
+    </div>
+    <script>
+        var vm = new Vue({
+            el: '#app2',
+            data: {
+                name: 'Lucy'
+            },
+            methods: {
+                greet: function (event) {
+                    alert('Hello ' + this.name + '!');
+                    if (event) { // `event` 是原生 DOM 事件
+                        alert(event.target.tagName);
+                    }
+                },
+                say: function (message) {
+                    alert(message);
+                }
+            }
+        });
+        vm.greet(); // 可以用JS直接调用方法哦
+    </script>
+
+    <h1>事件修饰符</h1>
+    <p>Vue.js 通过由点 . 表示的指令后缀来调用修饰符</p>
+    <p>形如 v-on:click.stop="doThis" 这样的</p>
+    <p>具体的这里暂不写了</p>
+
+    <h1>按键修饰符</h1>
+    <p>不太懂，暂不写了</p>
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>RILEY</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+</head>
+
+<body>
+    <h1>监听属性</h1>
+    <p>我们可以通过 watch 来响应数据的变化</p>
+
+    <div id="app1">
+        <p>计数器: {{ counter }}</p>
+        <button @click="counter++">点我</button>
+    </div>
+    <script>
+        var vm = new Vue({
+            el: '#app1',
+            data: {
+                counter: 1
+            }
+        });
+        vm.$watch('counter', function (nval, oval) {
+            alert('计数器值的变化 :' + oval + ' 变为 ' + nval + '!');
+        });
+        // 注意watch前面的$
+        // $watch是一个实例方法，第一个参数为要监听的属性，第二个参数为一个回调函数，这个函数自动传参属性变化后的值和变化前的值，将在第一个参数指定的属性改变后调用
+    </script>
+
+    <div id="app2">
+        千米 : <input type="text" v-model="km">
+        米 : <input type="text" v-model="m">
+    </div>
+    <p id="info"></p>
+    <script>
+        var vm2 = new Vue({
+            el: '#app2',
+            data: {
+                km: 0,
+                m: 0
+            },
+            watch: {
+                km: function (val) {
+                    this.km = val;
+                    this.m = this.km * 1000;
+                },
+                m: function (val) {
+                    this.m = val;
+                    this.km = this.m / 1000;
+                }
+            }
+        });
+        vm2.$watch('km', function (nval, oval) {
+            document.getElementById("info").innerHTML = "修改前值为：" + oval + "，修改后值为：" + nval;
+        })
+    </script>
+</body>
+
+</html>

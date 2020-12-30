@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>RILEY</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+</head>
+
+<body>
+    <h1>v-for迭代数组</h1>
+    <p>v-for可以绑定数据到数组来渲染一个列表</p>
+    <div id="app1">
+        <ol>
+            <li v-for="site in sites">
+                {{ site.name }}
+            </li>
+        </ol>
+
+        <ul>
+            <template v-for="site in sites">
+                <li>{{ site.name }}</li>
+                <li>--------------</li>
+            </template>
+            <!-- vue中template的作用就是模板占位符，可帮助我们包裹元素，但在循环过程当中，template不会被渲染到页面上 -->
+            <!-- 如果我们不用template，那么就要用div，但是没必要额外增加一个div啊 -->
+            <!-- 很多时候都可以用template来包裹元素 -->
+            <!-- 其他地方的template好像不是这样的，呀嘞呀嘞，先不管其他，就先记住vue中的用法就行 -->
+        </ul>
+    </div>
+    <script>
+        new Vue({
+            el: '#app1',
+            data: {
+                sites: [
+                    { name: 'Runoob' },
+                    { name: 'Google' },
+                    { name: 'Taobao' }
+                ]
+            }
+        });
+    </script>
+
+    <h1>v-for迭代对象</h1>
+    <p>注意咯，和js中for...in迭代对象不同，for...in是遍历对象的属性，这里是遍历对象的属性值</p>
+    <div id="app2">
+        <ul>
+            <li v-for="value in object">
+                {{ value }}
+            </li>
+        </ul>
+    </div>
+    <script>
+        new Vue({
+            el: '#app2',
+            data: {
+                object: {
+                    name: '菜鸟教程',
+                    url: 'http://www.runoob.com',
+                    slogan: '学的不仅是技术，更是梦想！'
+                }
+            }
+        });
+    </script>
+    <p>还可以提供第二个参数为键名</p>
+    <div id="app3">
+        <ul>
+            <li v-for="(value, key) in object">
+                {{ key }} : {{ value }}
+            </li>
+        </ul>
+    </div>
+    <script>
+        new Vue({
+            el: '#app3',
+            data: {
+                object: {
+                    name: '菜鸟教程',
+                    url: 'http://www.runoob.com',
+                    slogan: '学的不仅是技术，更是梦想！'
+                }
+            }
+        });
+    </script>
+    <p>还可以提供第三个参数为索引</p>
+    <div id="app4">
+        <ul>
+            <li v-for="(value, key, index) in object">
+                {{ index }}. {{ key }} : {{ value }}
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app4',
+            data: {
+                object: {
+                    name: '菜鸟教程',
+                    url: 'http://www.runoob.com',
+                    slogan: '学的不仅是技术，更是梦想！'
+                }
+            }
+        });
+    </script>
+
+    <h1>v-for迭代整数</h1>
+    <div id="app5">
+        <ul>
+            <li v-for="n in 10">
+                {{ n }}
+            </li>
+        </ul>
+    </div>
+    <script>
+        new Vue({
+            el: '#app5'
+        });
+    </script>
+</body>
+
+</html>

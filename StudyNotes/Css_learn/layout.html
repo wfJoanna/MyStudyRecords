@@ -21,7 +21,11 @@
         img {
             display: block;
             /*为什么这儿一定要变成block呢？
-            因为内联元素不能更改元素的height，width的值，大小由内容撑开*/
+            block之所以可以margin:auto，是因为他有最大宽度的限制，比如p就会一行满了就会换行，而行内元素没有最大宽度的限制，不会自动换行
+            然后block还必须要设置width，因为auto的含义是占据剩余的可用空间，如果不设置width，那默认width就是一整行，就没有剩余空间了
+            假设我们对块级元素只设置margin-left:auto，最终效果会是右对齐，因为auto就是占据一切能占据的剩余空间，然后设置margin:auto的话，左右两边就平分了剩余空间
+            inline-block和inline一样没有最大宽度的限制，所以设成auto就不知道剩余的可用空间有多大，所以就没效果
+            margin:0 auto和margin:auto之所以效果一样也是因为这个，因为垂直方向没有最大高度的限制，所以不知道剩余的可用空间有多大，所以就没效果*/
             width: 20%;
             margin: auto;
         }

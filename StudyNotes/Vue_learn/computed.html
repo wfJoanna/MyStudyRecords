@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>RILEY</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+</head>
+
+<body>
+    <h1>计算属性</h1>
+    <div id="app1">
+        <p>原始字符串: {{ message }}</p>
+        <p>计算后反转字符串: {{ reversedMessage }}</p>
+        <!--注意这里reversedMessage后面是没有括号的，而如果用方法的话，是需要括号的-->
+    </div>
+    <script>
+        var vm = new Vue({
+            el: '#app1',
+            data: {
+                message: 'Runoob!'
+            },
+            computed: {
+                // 计算属性的 getter
+                reversedMessage: function () {
+                    return this.message.split('').reverse().join('');
+                }
+            }
+        });
+    </script>
+
+    <h1>computed vs methods</h1>
+    <p>效果是一样的，可以互相代替。但是 computed 是基于它的依赖缓存，只有相关依赖发生改变时才会重新取值。而使用 methods ，在重新渲染的时候，函数总会重新调用执行（这段不是很懂，以后应该能看懂）</p>
+    <p>可以说使用 computed 性能会更好，但是如果你不希望缓存，你可以使用 methods 属性</p>
+    <p>另外注意，一个是reversedMessage，一个是reversedMessage()</p>
+
+    <h1>computed setter</h1>
+    <p>computed 属性默认只有 getter ，不过也可以写一个 setter</p>
+    <div id="app2">
+        <p>{{ site }}</p>
+    </div>
+    <script>
+        var vm = new Vue({
+            el: '#app2',
+            data: {
+                name: 'Google',
+                url: 'http://www.google.com'
+            },
+            computed: {
+                site: {
+                    // getter
+                    get: function () {
+                        return this.name + ' ' + this.url;
+                    },
+                    // setter
+                    set: function (newValue) {
+                        var names = newValue.split(' ');
+                        this.name = names[0];
+                        this.url = names[names.length - 1];
+                    }
+                }
+            }
+        });
+        // 调用 setter， vm.name 和 vm.url 也会被对应更新
+        vm.site = '菜鸟教程 http://www.runoob.com';
+        document.write('name: ' + vm.name);
+        document.write('<br>');
+        document.write('url: ' + vm.url);
+    </script>
+</body>
+
+</html>

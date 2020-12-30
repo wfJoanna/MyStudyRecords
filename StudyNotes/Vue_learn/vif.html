@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>RILEY</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+</head>
+
+<body>
+    <h1>v-if</h1>
+    <p>在template.html说过了，这儿不详写</p>
+
+    <h1>v-else</h1>
+    <div id="app1">
+        <div v-if="Math.random() > 0.5">
+            Sorry
+        </div>
+        <div v-else>
+            Not sorry
+        </div>
+    </div>
+    <script>
+        new Vue({
+            el: '#app1'
+        });
+    </script>
+
+    <h1>v-else-if</h1>
+    <div id="app2">
+        <div v-if="type === 'A'">
+            A
+        </div>
+        <div v-else-if="type === 'B'">
+            B
+        </div>
+        <div v-else-if="type === 'C'">
+            C
+        </div>
+        <div v-else>
+            Not A/B/C
+        </div>
+    </div>
+    <script>
+        new Vue({
+            el: '#app2',
+            data: {
+                type: 'C'
+            }
+        });
+    </script>
+
+    <p>先有了v-if，才能有v-else、v-else-if</p>
+
+    <h1>v-show</h1>
+    <p>我们也可以使用 v-show 指令来根据条件展示元素</p>
+    <div id="app3">
+        <p v-show="ok">Hello!</p>
+    </div>
+    <script>
+        new Vue({
+            el: '#app3',
+            data: {
+                ok: true
+            }
+        });
+    </script>
+</body>
+
+</html>

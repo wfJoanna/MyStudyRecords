@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>RILEY</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+</head>
+
+<body>
+    <h1>v-html</h1>
+    <p>v-html指令用于输出html代码</p>
+    <div id="app">
+        <div v-html="message"></div>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                message: '<p>Doppio</p>'
+            }
+        });
+    </script>
+
+    <hr>
+
+    <h1>v-bind</h1>
+    <div id="app2">
+        <label for="r1">修改颜色</label><input type="checkbox" v-model="use" id="r1"><br><br>
+        <!--这里label里的for和vue没有关系，只是表示这个label和id为"r1"的input元素绑定了-->
+        <div v-bind:class="{class1:use}">
+            v-bind指令用于控制元素属性<br>这个实例判断 use 的值，如果为 true 使用 class1 类的样式，否则不使用该类
+        </div>
+        <p>参数在指令后以冒号指明。比如下面href是参数，告知 v-bind 指令将该元素的 href 属性与表达式 url 的值绑定</p>
+        <a v-bind:href="url">菜鸟教程</a>
+    </div>
+    <script>
+        new Vue({
+            el: '#app2',
+            data: {
+                use: false,
+                url: 'https://www.runoob.com/'
+            }
+        });
+    </script>
+    <style>
+        .class1 {
+            background: #444;
+            color: #eee;
+        }
+    </style>
+
+    <hr>
+
+    <h1>JS表达式</h1>
+    <div id="app3">
+        {{5+5}}<br>
+        {{ok?'YES':'NO'}}<br>
+        {{message.split('').reverse().join('')}}
+        <div v-bind:id="'list-'+id">RILEY</div>
+    </div>
+    <script>
+        new Vue({
+            el: '#app3',
+            data: {
+                ok: true,
+                message: 'Riley',
+                id: 1
+            }
+        });
+    </script>
+    <style>
+        #list-1 {
+            background: #444;
+            color: #eee;
+        }
+    </style>
+
+    <hr>
+
+    <h1>v-if</h1>
+    <div id="app4">
+        <p v-if="yes">你看得到我</p>
+        <p v-if="no">你看不到我</p>
+        <!--注意，这里并没有占据空间，不在文档流中-->
+        <p>v-if指令将根据yes和no的值(true或false)来决定是否插入p元素</p>
+    </div>
+    <script>
+        new Vue({
+            el: '#app4',
+            data: {
+                yes: true,
+                no: false
+            }
+        });
+    </script>
+
+    <hr>
+
+    <h1>v-on</h1>
+    <p>v-on用于监听dom事件</p>
+    <div id="app5">
+        <p>{{message}}</p>
+        <button v-on:click="reverseMessage">反转字符串</button>
+        <!--注意这里reverseMessage没有括号，而普通的onclick=""函数后面是需要括号的-->
+        <!--可有括号，也可无括号。因为无括号时表示绑定到一个方法上，有括号时表示用的是内联JS语句-->
+    </div>
+    <script>
+        new Vue({
+            el: '#app5',
+            data: {
+                message: 'go johnny go go'
+            },
+            methods: {
+                reverseMessage: function () {
+                    this.message = this.message.split('').reverse().join('');
+                }
+            }
+        });
+    </script>
+
+    <hr>
+
+    <h1>v-model</h1>
+    <p>v-model 指令用来在 input、select、textarea、checkbox、radio 等表单控件元素上创建双向数据绑定，根据表单上的值，自动更新绑定的元素的值</p>
+    <p>比如上面v-bind那儿就有例子。下面再举个例子</p>
+    <div id="app6">
+        <p>{{message}}</p>
+        <input v-model="message">
+    </div>
+    <script>
+        new Vue({
+            el: '#app6',
+            data: {
+                message: 'write here'
+            }
+        });
+    </script>
+
+    <hr>
+
+    <h1>过滤器</h1>
+    <p>过滤器函数接受表达式的值作为第一个参数</p>
+    <div id="app7">
+        {{ message | capitalize }}
+    </div>
+    <script>
+        new Vue({
+            el: '#app7',
+            data: {
+                message: 'runoob'
+            },
+            filters: {
+                capitalize: function (value) {
+                    if (!value) return ''
+                    value = value.toString()
+                    return value.charAt(0).toUpperCase() + value.slice(1)
+                }
+            }
+        });
+    </script>
+    <p>当然，过滤器是函数，可以接受其他参数的。比如我们写成{{ message | filterA('arg1', arg2) }}，message自动是第一个参数，然后'arg1'和arg2作为第二个参数和第三个参数</p>
+    <p>过滤器还可以串联，形如这样{{ message | filterA | filterB }}</p>
+
+    <hr>
+
+    <h1>缩写</h1>
+    <p>v-bind和v-on可以缩写</p>
+    <!-- 完整语法 -->
+    <!-- <a v-bind:href="url"></a> -->
+    <!-- 缩写 -->
+    <!-- <a :href="url"></a> -->
+    <!-- 完整语法 -->
+    <!-- <a v-on:click="doSomething"></a> -->
+    <!-- 缩写 -->
+    <!-- <a @click="doSomething"></a> -->
+</body>
+
+</html>

@@ -40,8 +40,9 @@
 
         div.sticky {
             position: sticky;
-            top: 0;
-            /*哭了，这个sticky太不好弄了，目前只有这一种情况行得通，稍微改成left或者改成10就不行了*/
+            top: 50px;
+            left: 50px;
+            width:100px;
             padding: 5px;
             background-color: #cae8ca;
             border: 2px solid #4CAF50;
@@ -89,7 +90,7 @@
     <h1>CSS position:absolute; 绝对定位</h1>
     <p>
         绝对定位的元素的位置，是相对于最近的已定位父元素（static除外）。注意是<b>父元素</b><br>
-        如果元素没有已定位的父元素，那么它的位置相对于html，初始位置就跟fixed一样了，只不过会随着滚动而移动<br>
+        如果元素没有已定位的父元素，那么它的位置相对于body，初始位置就跟fixed一样了，只不过会随着滚动而移动<br>
         absolute定位使元素的位置与文档流无关，因此不占据空间<br>
         absolute定位的元素会和其他元素重叠
     </p>
@@ -98,7 +99,7 @@
     <hr>
 
     <h1>CSS position:sticky; 粘性定位</h1>
-    <p>基于用户的滚动位置来定位（具体的复杂得很，总之先记住这一种效果吧）</p>
+    <p>在屏幕范围（viewport）时，元素不定位，当元素将要移出偏移范围时，定位变成fixed，不脱离文档流</p>
     <div class="sticky">我是粘性定位!</div>
 
     <hr>

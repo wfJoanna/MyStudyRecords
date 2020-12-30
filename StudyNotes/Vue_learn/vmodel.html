@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>RILEY</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+</head>
+
+<body>
+    <h1>表单</h1>
+
+    <h2>输入框</h2>
+    <div id="app1">
+        input 元素：<input v-model="message" placeholder="请输入……">
+        <p>您的输入是: {{ message }}</p>
+        textarea 元素：<textarea v-model="message2" placeholder="多行文本输入……"></textarea>
+        <p>您的输入是: {{ message2 }}</p>
+    </div>
+    <script>
+        new Vue({
+            el: '#app1',
+            data: {
+                message: 'Runoob',
+                message2: '菜鸟教程 http://www.runoob.com'
+            }
+        });
+    </script>
+
+    <h2>复选框</h2>
+    <p>复选框如果是一个则为布尔值，如果是多个则绑定到同一个数组</p>
+    <div id="app2">
+        <p>单个复选框：</p>
+        <input type="checkbox" id="checkbox" v-model="checked">
+        <label for="checkbox">{{ checked }}</label>
+
+        <p>多个复选框：</p>
+        <input type="checkbox" id="runoob" value="Runoob" v-model="checkedNames">
+        <label for="runoob">Runoob</label>
+        <input type="checkbox" id="google" value="Google" v-model="checkedNames">
+        <label for="google">Google</label>
+        <input type="checkbox" id="taobao" value="Taobao" v-model="checkedNames">
+        <label for="taobao">taobao</label>
+        <br>
+        <span>选择的值为: {{ checkedNames }}</span>
+    </div>
+    <script>
+        new Vue({
+            el: '#app2',
+            data: {
+                checked: false,
+                checkedNames: []
+            }
+        });
+    </script>
+
+    <h2>单选按钮</h2>
+    <div id="app3">
+        <input type="radio" id="runoob" value="Runoob" v-model="picked">
+        <label for="runoob">Runoob</label>
+        <br>
+        <input type="radio" id="google" value="Google" v-model="picked">
+        <label for="google">Google</label>
+        <br>
+        <span>选中值为: {{ picked }}</span>
+    </div>
+    <script>
+        new Vue({
+            el: '#app3',
+            data: {
+                picked: 'Runoob'
+            }
+        });
+    </script>
+
+    <h2>select下拉列表</h2>
+    <div id="app4">
+        <select v-model="selected">
+            <option value="">选择一个网站</option>
+            <option value="www.runoob.com">Runoob</option>
+            <option value="www.google.com">Google</option>
+        </select>
+        <div>
+            选择的网站是: {{selected}}
+        </div>
+    </div>
+    <script>
+        new Vue({
+            el: '#app4',
+            data: {
+                selected: ''
+            }
+        });
+    </script>
+
+    <h2>修饰符</h2>
+    <p>比如 .number</p>
+    <p>自动将用户的输入值转为 Number 类型（如果原值的转换结果为 NaN 则返回原值）</p>
+    <!-- <input v-model.number="age"> -->
+    <p>比如 .trim</p>
+    <p>自动过滤用户输入的首尾空格</p>
+</body>
+
+</html>
