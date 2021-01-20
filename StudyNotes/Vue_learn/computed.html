@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>RILEY</title>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.11/vue.js"></script>
 </head>
 
 <body>
@@ -13,6 +13,7 @@
         <p>原始字符串: {{ message }}</p>
         <p>计算后反转字符串: {{ reversedMessage }}</p>
         <!--注意这里reversedMessage后面是没有括号的，而如果用方法的话，是需要括号的-->
+        <!--就像访问data里的属性那样访问computed里的属性-->
     </div>
     <script>
         var vm = new Vue({
@@ -29,15 +30,13 @@
         });
     </script>
 
-    <h1>computed vs methods</h1>
-    <p>效果是一样的，可以互相代替。但是 computed 是基于它的依赖缓存，只有相关依赖发生改变时才会重新取值。而使用 methods ，在重新渲染的时候，函数总会重新调用执行（这段不是很懂，以后应该能看懂）</p>
-    <p>可以说使用 computed 性能会更好，但是如果你不希望缓存，你可以使用 methods 属性</p>
-    <p>另外注意，一个是reversedMessage，一个是reversedMessage()</p>
+    <p>值得注意的是，如果计算属性中相关的<b>实例内</b>的值发生改变，最后的结果都会<b>实时改变</b>（注意只监听实例内的值，实例外的值改变后并无反应。但实例内的值改变后，计算属性显示的<b>部分会重新渲染</b>，就会显示改变后的实例外的值）</p>
 
     <h1>computed setter</h1>
     <p>computed 属性默认只有 getter ，不过也可以写一个 setter</p>
     <div id="app2">
         <p>{{ site }}</p>
+        <!--就像访问data里的属性那样访问computed里的属性-->
     </div>
     <script>
         var vm = new Vue({

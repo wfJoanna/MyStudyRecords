@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>RILEY</title>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.11/vue.js"></script>
 </head>
 
 <body>
@@ -104,6 +104,7 @@
         <button v-on:click="reverseMessage">反转字符串</button>
         <!--注意这里reverseMessage没有括号，而普通的onclick=""函数后面是需要括号的-->
         <!--可有括号，也可无括号。因为无括号时表示绑定到一个方法上，有括号时表示用的是内联JS语句-->
+        <!--onclick里面只能是内联JS语句，而这里v-on都可以-->
     </div>
     <script>
         new Vue({
@@ -152,9 +153,9 @@
             },
             filters: {
                 capitalize: function (value) {
-                    if (!value) return ''
-                    value = value.toString()
-                    return value.charAt(0).toUpperCase() + value.slice(1)
+                    if (!value) return '';
+                    value = value.toString();
+                    return value.charAt(0).toUpperCase() + value.slice(1);
                 }
             }
         });

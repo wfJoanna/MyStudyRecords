@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>RILEY</title>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.11/vue.js"></script>
 </head>
 
 <body>
@@ -41,13 +41,14 @@
                     if (event) { // `event` 是原生 DOM 事件
                         alert(event.target.tagName);
                     }
+                    console.log(event);
                 },
                 say: function (message) {
                     alert(message);
                 }
             }
         });
-        vm.greet(); // 可以用JS直接调用方法哦
+        vm.greet(); // 可以用JS直接调用方法哦。不过因为不是dom事件触发的，所以event为undefined
     </script>
 
     <h1>事件修饰符</h1>

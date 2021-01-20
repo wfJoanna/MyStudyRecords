@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>RILEY</title>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.11/vue.js"></script>
     <style>
         .active {
             width: 100px;
@@ -19,7 +19,8 @@
 </head>
 
 <body>
-    <h1>v-bind:class</h1>
+    <h1>样式绑定</h1>
+    <h2>v-bind:class</h2>
 
     <p>例一：</p>
     <div id="app1">
@@ -132,7 +133,7 @@
         });
     </script>
 
-    <h1>v-bind:style</h1>
+    <h2>v-bind:style</h2>
     <p>我们可以在 v-bind:style 直接设置样式</p>
     <div id="app7">
         <div v-bind:style="{ color: activeColor, fontSize: fontSize + 'px' }">菜鸟教程</div>

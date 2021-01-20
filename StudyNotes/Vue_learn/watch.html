@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>RILEY</title>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.11/vue.js"></script>
 </head>
 
 <body>
@@ -23,12 +23,13 @@
             }
         });
         vm.$watch('counter', function (nval, oval) {
-            alert('计数器值的变化 :' + oval + ' 变为 ' + nval + '!');
+            alert('计数器值的变化 :' + oval + ' 变为 ' + nval);
         });
         // 注意watch前面的$
         // $watch是一个实例方法，第一个参数为要监听的属性，第二个参数为一个回调函数，这个函数自动传参属性变化后的值和变化前的值，将在第一个参数指定的属性改变后调用
     </script>
 
+    <br>
     <div id="app2">
         千米 : <input type="text" v-model="km">
         米 : <input type="text" v-model="m">
@@ -43,13 +44,13 @@
             },
             watch: {
                 km: function (val) {
-                    this.km = val;
-                    this.m = this.km * 1000;
+                    this.m = val * 1000;
                 },
                 m: function (val) {
-                    this.m = val;
-                    this.km = this.m / 1000;
+                    this.km = val / 1000;
                 }
+                // watch里的方法名必须和要监听的属性名一致
+                // 这里的watch和下面$watch其实是一样的，只是写法不同，但本质就是一样的，都是一个参数时传入新值，两个参数时传入新值和旧值
             }
         });
         vm2.$watch('km', function (nval, oval) {

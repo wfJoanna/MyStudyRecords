@@ -4,14 +4,14 @@
 <head>
     <meta charset="utf-8">
     <title>RILEY</title>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.11/vue.js"></script>
 </head>
 
 <body>
     <p><b>组件可以扩展 HTML 元素，封装可重用的代码</b></p>
 
     <h1>全局组件</h1>
-    <p>所有实例都能用全局组件</p>
+    <p>所有实例都能用全局组件（<b>注意必须在Vue实例中才能使用全局组件</b>，比如这里就是在id为app1的元素中使用runoob组件）</p>
     <p>注册一个全局组件语法格式：<b>Vue.component(tagName, options);</b></p>
     <p>tagName 为组件名，options 为配置选项</p>
     <p>例子：</p>
@@ -36,7 +36,7 @@
     <p>我们也可以在实例选项中注册局部组件，这样组件只能在这个实例中使用</p>
     <p>例子：</p>
     <div id="app2">
-        <runoob></runoob>
+        <runoob2></runoob2>
     </div>
     <script>
         var Child = {
@@ -45,7 +45,7 @@
         new Vue({
             el: '#app2',
             components: { // 注意！是components，有s，上面儿注册全局组件时没s
-                'runoob': Child
+                'runoob2': Child
             }
         });
     </script>
@@ -64,7 +64,7 @@
             props: ['message'],
             template: '<h3>{{ message }}</h3>'
         });
-        var vm = new Vue({
+        new Vue({
             el: '#app3'
         });
     </script>
@@ -77,7 +77,7 @@
             props: ['message'],
             template: '<h3>{{ message }}</h3>'
         });
-        var vm = new Vue({
+        new Vue({
             el: '#app4',
             data: {
                 Msg: 'hello!'
@@ -142,6 +142,8 @@
             }
         });
     </script>
+
+    <h1>详细的自己去看官网，我懒得写了</h1>
 </body>
 
 </html>
