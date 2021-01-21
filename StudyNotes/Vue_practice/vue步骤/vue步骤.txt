@@ -1,0 +1,48 @@
+1，cd到项目文件夹
+2，“vue create 项目名”，然后手动设置：
+	推荐设置：
+	babel，router，vuex，css，linter
+	yes
+	Sass/SCSS
+	Standard
+	Lint on save
+	In dedicated
+	n
+3，cd到创建的项目文件夹
+4，“npm run serve”，打开端口页面，可以看到这个vue已经跑起来了
+
+也可以用“vue ui”，进入端口页面后，在里面查看和创建项目
+
+
+
+
+vue-router：
+1，写好自己的组件，至少在default中写上“name: 'Info'”
+2，在App.vue的template中添加上router-link，给该标签添加属性“to="/info"”，标签中间添加文本“Info”（相当于是给这个元素绑定了/info这个路径）
+3，在router的index.js里添加“import Info from '../views/info.vue'”
+4，在router的index.js里的routes里添加
+ “{
+    path: '/info',
+    name: 'Info',
+    component: Info
+  },”（给/info这个路径绑定了我们的组件，即在上一步导入的Info）
+5，shift+alt+f
+
+
+
+
+vuex：
+1，在store的index.js里的state里添加count，即组件公用的状态
+2，在store的index.js里的mutations里添加对应的改变状态的方法increase
+在组件中使用到vuex：
+1，“import store from '@/store/index.js'”
+2，在default里面添加“store,”
+3，在组件里编写事件处理的方法，在这个方法里用“store.commit('increase')”提交修改
+4，如果不想修改状态而是想访问状态，则可以通过“store.state.count”来访问
+5，shift+alt+f
+
+
+
+单独测试某一个组件：
+1，编写xxx.vue
+2，“vue serve xxx.vue”
