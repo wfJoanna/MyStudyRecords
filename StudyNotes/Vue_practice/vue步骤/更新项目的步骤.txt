@@ -1,0 +1,11 @@
+1，git pull
+2，修改
+3，注释掉main.js中的cookie
+4，修改main.js中的版本号
+5，git config --global user.name "tianfangyu"
+6，git config --global user.email "tianfangyu@chinamcloud.com"
+7，git add .
+8，git commit -m "……"
+9，git tag x.x.x
+10，git push
+11，git push origin x.x.x

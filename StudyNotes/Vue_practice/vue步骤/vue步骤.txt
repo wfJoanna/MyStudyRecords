@@ -46,3 +46,10 @@ vuex：
 单独测试某一个组件：
 1，编写xxx.vue
 2，“vue serve xxx.vue”
+
+
+本地调试vue项目：
+1，“cnpm install”
+2，设置一下cookie
+3，“npm run serve”
+4，在浏览器中给路径后加上“?system=call”
